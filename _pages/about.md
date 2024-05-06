@@ -11,7 +11,7 @@ redirect_from:
 
 
 ![Illustration of medical segmentation](/images/images.jpeg){: .align-right width="300px"}
-👨🏻‍💻 I'm a PhD student at Concordia University working with [IMPACT Lab](https://users.encs.concordia.ca/~impact/) and [Health-X Lab](http://www.healthx-lab.ca/) under the supervision of [Hassan Rivaz](https://users.encs.concordia.ca/~hrivaz/), [Yiming Xiao](https://yimingxiao.weebly.com/curriculum-vitae.html).
+👨🏻‍💻 I'm a PhD student at Concordia University working with [IMPACT Lab](https://users.encs.concordia.ca/~impact/) and [Health-X Lab](http://www.healthx-lab.ca/) under the supervision of [Hassan Rivaz](https://users.encs.concordia.ca/~hrivaz/) and [Yiming Xiao](https://yimingxiao.weebly.com/curriculum-vitae.html).
 
 🔬 My research interests are in multi-modal learning, foundation models, and medical image analysis!
 
@@ -22,7 +22,7 @@ redirect_from:
 # Selected Experience
 
 ## 🤖 Ongoing Research
-I am currently engaged in exciting research at the intersectionof text and vision, with a specific focus on medical imaging. By seamlessly integrating Natural Language Processing (NLP) and Computer Vision methodologies, my work aims to revolutionize how textual descriptions and visual data from multiple medical imaging modalities are analyzed and interpreted. This interdisciplinary approach holds tremendous potential to advance diagnostic precision, optimize clinical processes, and ultimately elevate patient care standards within the realm of medical imaging. 
+I am currently engaged in exciting research at the intersection of text and vision, with a specific focus on medical imaging. By seamlessly integrating Natural Language Processing (NLP) and Computer Vision methodologies, my work aims to revolutionize how textual descriptions and visual data from multiple medical imaging modalities are analyzed and interpreted. This interdisciplinary approach holds tremendous potential to advance diagnostic precision, optimize clinical processes, and ultimately elevate patient care standards within the realm of medical imaging. 
 
 <!-- ## 📜 Reimplementing and Reproducing Papers
 I have experience with independent research. I have implemented the Reward Constrained Policy Optimization paper into stable-baselines3 PPO and reproduced the original results by running and tracking experiments.
