@@ -11,7 +11,7 @@ redirect_from:
 
 
 ![Illustration of medical segmentation](/images/images.jpeg){: .align-right width="300px"}
-👨🏻‍💻 I'm a PhD student at Concordia University working with [IMPACT Lab](https://users.encs.concordia.ca/~impact/) and [Health-X Lab](http://www.healthx-lab.ca/) under the supervision of [Dr. Hassan Rivaz](https://users.encs.concordia.ca/~hrivaz/) and [Dr. Yiming Xiao](https://yimingxiao.weebly.com/curriculum-vitae.html).
+👨🏻‍💻 I'm a PhD student at Concordia University working with [IMPACT Lab](https://users.encs.concordia.ca/~impact/) and [Health-X Lab](http://www.healthx-lab.ca/) under the supervision of [Hassan Rivaz](https://users.encs.concordia.ca/~hrivaz/) and [Yiming Xiao](https://yimingxiao.weebly.com/curriculum-vitae.html).
 
 🔬 My research interests are in multi-modal learning, foundation models, and medical image analysis!
 
