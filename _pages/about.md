@@ -17,7 +17,7 @@ redirect_from:
 
 📚 I'm currently working on exciting projects leveraging CLIP and SAM for universal medical image segmentation.
 
-🎉 My paper "MedCLIP-SAM: Bridging Text and Image Towards Universal Medical Image Segmentation" has been accepted at the [27th International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2024](https://miccai2024.org/). You can read the paper [here](https://arxiv.org/abs/2403.20253) and check out the code on [GitHub](https://github.com/HealthX-Lab/MedCLIP-SAM).
+🎉 My paper "MedCLIP-SAM: Bridging Text and Image Towards Universal Medical Image Segmentation" has been accepted at the [27th International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2024](https://conferences.miccai.org/2024/en/). You can read the paper [here](https://arxiv.org/abs/2403.20253) and check out the code on [GitHub](https://github.com/HealthX-Lab/MedCLIP-SAM).
 
 # Selected Experience
 
