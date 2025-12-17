@@ -174,19 +174,7 @@
             <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button">Blog</a>
           {%- endif %}
           {%- if entry.code %}
-            <div style="display:inline-block; text-align:center;">
-              <a href="{{ entry.code }}"
-                class="btn btn-sm z-depth-0"
-                role="button">
-                Code
-              </a>
-              <br>
-              <a href="{{ entry.code }}" target="_blank">
-                <img
-                  src="https://img.shields.io/github/stars/{{ entry.code | replace: 'https://github.com/', '' }}?style=social"
-                  alt="GitHub stars">
-              </a>
-            </div>
+            <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
           {%- endif %}
 
           {%- if entry.poster %}
@@ -207,6 +195,15 @@
             <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
           {%- endif %}
           </div>
+          {%- if entry.code %}
+            <div class="github-stars" style="margin-top:4px;">
+              <a href="{{ entry.code }}" target="_blank">
+                <img
+                  src="https://img.shields.io/github/stars/{{ entry.code | replace: 'https://github.com/', '' }}?style=social"
+                  alt="GitHub stars">
+              </a>
+            </div>
+            {%- endif %}
           {% if site.badges %}
           <div class="badges">
             {%- if site.badges.altmetric_badge %}
