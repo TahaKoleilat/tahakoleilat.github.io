@@ -2,12 +2,12 @@
 layout: page
 permalink: /teaching/
 title: Teaching
-description: Courses I have taught.
+description:
 nav: true
 nav_order: 5
 ---
 
-### Courses Taught
+### Courses I have taught
 
 - **COMP 478 / COMP 6771** — Image Processing 
 - **COMP 233** — Probability & Statistics  
