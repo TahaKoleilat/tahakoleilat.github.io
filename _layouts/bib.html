@@ -174,13 +174,38 @@
             <a href="{{ entry.blog }}" class="btn btn-sm z-depth-0" role="button">Blog</a>
           {%- endif %}
           {%- if entry.code %}
-            <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
-            <a href="{{ entry.code }}" target="_blank" style="margin-left:4px;">
-              <img
-                src="https://img.shields.io/github/stars/{{ entry.code | replace: 'https://github.com/', '' }}?style=social"
-                alt="GitHub stars">
+            <div style="display:inline-block; text-align:center;">
+              <a href="{{ entry.code }}"
+                class="btn btn-sm z-depth-0"
+                role="button">
+                Code
+              </a>
+              <br>
+              <a href="{{ entry.code }}" target="_blank">
+                <img
+                  src="https://img.shields.io/github/stars/{{ entry.code | replace: 'https://github.com/', '' }}?style=social"
+                  alt="GitHub stars">
+              </a>
+            </div>
+          {%- endif %}
+
+          {%- if entry.doi %}
+            {% assign clean_doi = entry.doi | replace: 'https://doi.org/', '' | replace: 'http://doi.org/', '' %}
+            <a href="https://doi.org/{{ clean_doi }}"
+              class="btn btn-sm z-depth-0"
+              target="_blank"
+              role="button">
+              Citations
+            </a>
+          {%- else %}
+            <a href="https://scholar.google.com/scholar?q={{ entry.title | url_encode }}"
+              class="btn btn-sm z-depth-0"
+              target="_blank"
+              role="button">
+              Citations
             </a>
           {%- endif %}
+
           {%- if entry.poster %}
             {% if entry.poster contains '://' -%}
             <a href="{{ entry.poster }}" class="btn btn-sm z-depth-0" role="button">Poster</a>
