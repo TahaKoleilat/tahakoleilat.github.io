@@ -30,7 +30,7 @@ My work has been published at leading venues including **CVPR**, **MICCAI**, and
 I am serving as a reviewer for leading venues including **IEEE TPAMI**, **MICCAI**, **Medical Image Analysis (MedIA)**, and **IEEE TMI**.
 
 <a href="mailto:tahakoleilat@gmail.com">Email</a> /
-<a href="https://scholar.google.com/">Google Scholar</a> /
-<a href="https://github.com/">GitHub</a> /
-<a href="https://www.linkedin.com/">LinkedIn</a> /
-<a href="/assets/pdf/Taha_Koleilat_CV.pdf">CV</a>
+<a href="https://scholar.google.ca/citations?user=chB2OjUAAAAJ&hl=en&authuser=1">Google Scholar</a> /
+<a href="https://github.com/TahaKoleilat">GitHub</a> /
+<a href="https://www.linkedin.com/in/tahakoleilat/">LinkedIn</a> /
+<a href="/assets/pdf/Resume.pdf">CV</a>
