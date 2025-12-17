@@ -155,6 +155,14 @@
             <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
             {%- endif %}
           {%- endif %}
+          {%- if entry.title %}
+            <a href="https://scholar.google.com/scholar?q={{ entry.title | url_encode }}"
+              class="btn btn-sm z-depth-0"
+              target="_blank"
+              role="button">
+              Citations
+            </a>
+          {%- endif %}
           {%- if entry.supp %}
             {% if entry.supp contains '://' -%}
             <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" role="button">Supp</a>
@@ -167,6 +175,11 @@
           {%- endif %}
           {%- if entry.code %}
             <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
+            <a href="{{ entry.code }}" target="_blank" style="margin-left:4px;">
+              <img
+                src="https://img.shields.io/github/stars/{{ entry.code | replace: 'https://github.com/', '' }}?style=social"
+                alt="GitHub stars">
+            </a>
           {%- endif %}
           {%- if entry.poster %}
             {% if entry.poster contains '://' -%}
