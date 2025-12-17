@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://tahakoleilat.github.io//sitemap.xml
