@@ -27,6 +27,8 @@ My work has been published at leading venues including **CVPR**, **MICCAI**, and
 
 <b>Currently, I am</b> working on **text-driven medical image segmentation**, **vision–language model adaptation**, and **uncertainty-aware multimodal learning** for efficient and reliable clinical deployment.
 
+I am serving as a reviewer for leading venues including **IEEE TPAMI**, **MICCAI**, **Medical Image Analysis (MedIA)**, and **IEEE TMI**.
+
 <a href="mailto:tahakoleilat@gmail.com">Email</a> /
 <a href="https://scholar.google.com/">Google Scholar</a> /
 <a href="https://github.com/">GitHub</a> /
