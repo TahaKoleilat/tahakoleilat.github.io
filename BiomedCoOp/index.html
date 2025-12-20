@@ -37,22 +37,54 @@
       </p>
 
       <div class="buttons is-centered mt-4">
-        <a class="button is-dark is-rounded" href="https://arxiv.org/abs/2411.15232">
-          <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+        <a
+          class="button is-dark is-rounded"
+          href="https://arxiv.org/abs/2411.15232"
+          target="_blank"
+        >
+          <span class="icon is-small">
+            <i class="ai ai-arxiv"></i>
+          </span>
+          <span>arXiv</span>
         </a>
-        <a class="button is-dark is-rounded" href="https://github.com/HealthX-Lab/BiomedCoOp">
-          <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+
+        <a
+          class="button is-dark is-rounded"
+          href="https://github.com/HealthX-Lab/BiomedCoOp"
+          target="_blank"
+        >
+          <span class="icon is-small">
+            <i class="fab fa-github"></i>
+          </span>
+          <span>Code</span>
         </a>
-        <a class="button is-dark is-rounded" href="https://huggingface.co/TahaKoleilat/BiomedCoOp">
-          <span class="icon"><i class="fas fa-cube"></i></span><span>Models</span>
+
+        <a
+          class="button is-dark is-rounded"
+          href="https://huggingface.co/TahaKoleilat/BiomedCoOp"
+          target="_blank"
+        >
+          <span class="icon is-small">
+            <i class="fas fa-cube"></i>
+          </span>
+          <span>Models</span>
         </a>
-        <a class="button is-dark is-rounded" href="https://huggingface.co/datasets/TahaKoleilat/BiomedCoOp">
-          <span class="icon"><i class="far fa-images"></i></span><span>Datasets</span>
+
+        <a
+          class="button is-dark is-rounded"
+          href="https://huggingface.co/datasets/TahaKoleilat/BiomedCoOp"
+          target="_blank"
+        >
+          <span class="icon is-small">
+            <i class="far fa-images"></i>
+          </span>
+          <span>Datasets</span>
         </a>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- ================= TEASER ================= -->
 <section class="hero teaser">
@@ -188,6 +220,220 @@
     </div>
   </div>
 </section>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="BiomedCoOp: Learning to Prompt for Biomedical Vision-Language Models">
+  <meta name="keywords"
+        content="BiomedCoOp, BiomedCLIP, CLIP, Few-shot Learning, Medical Imaging">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BiomedCoOp</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="title is-1">
+        BiomedCoOp: Learning to Prompt for Biomedical Vision-Language Models
+      </h1>
+
+      <p class="is-size-5">
+        Taha Koleilat · Hojat Asgariandehkordi · Hassan Rivaz · Yiming Xiao
+      </p>
+      <p class="is-size-6">
+        Concordia University · Health-X Lab · IMPACT Lab
+      </p>
+
+      <div class="buttons is-centered mt-4">
+        <a class="button is-dark is-rounded" href="https://arxiv.org/abs/2411.15232">
+          <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+        </a>
+        <a class="button is-dark is-rounded" href="https://github.com/HealthX-Lab/BiomedCoOp">
+          <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+        </a>
+        <a class="button is-dark is-rounded" href="https://huggingface.co/TahaKoleilat/BiomedCoOp">
+          <span class="icon"><i class="fas fa-cube"></i></span><span>Models</span>
+        </a>
+        <a class="button is-dark is-rounded" href="https://huggingface.co/datasets/TahaKoleilat/BiomedCoOp">
+          <span class="icon"><i class="far fa-images"></i></span><span>Datasets</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEASER ================= -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/overview.png" class="teaser-image">
+      <h2 class="subtitle has-text-centered">
+        Overview of BiomedCoOp: LLM-guided prompt ensembles and selective distillation
+        enable robust few-shot biomedical image classification.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABSTRACT ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        We propose <b>BiomedCoOp</b>, a prompt learning framework for efficient adaptation
+        of biomedical vision-language models. By leveraging semantic consistency with
+        large language model prompt ensembles and selective knowledge distillation,
+        BiomedCoOp achieves state-of-the-art few-shot performance and superior
+        base-to-novel generalization across 11 biomedical datasets spanning 9 modalities.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+
+    <div class="content has-text-justified">
+      <ul>
+        <li><b>LLM-guided Prompt Ensembles:</b> Biomedical descriptions generated by LLMs guide context learning.</li>
+        <li><b>Semantic Consistency:</b> Learned prompts are aligned with averaged LLM embeddings.</li>
+        <li><b>Selective Knowledge Distillation:</b> Outlier prompts are pruned using statistics-based selection.</li>
+        <li><b>BiomedCLIP Backbone:</b> Enables strong multi-modal biomedical representations.</li>
+      </ul>
+    </div>
+
+    <figure class="image">
+      <img src="./static/images/BiomedCoOp.jpg">
+    </figure>
+  </div>
+</section>
+
+<!-- ================= FEW-SHOT RESULTS ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Few-shot Evaluation</h2>
+
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>K = 1</th>
+            <th>K = 2</th>
+            <th>K = 4</th>
+            <th>K = 8</th>
+            <th>K = 16</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="has-background-light"><td colspan="6"><b>Zero-shot Methods</b></td></tr>
+          <tr><td>BiomedCLIP</td><td>–</td><td>–</td><td>42.05</td><td>–</td><td>–</td></tr>
+          <tr><td>BiomedCLIP + Ensemble</td><td>–</td><td>–</td><td>52.27</td><td>–</td><td>–</td></tr>
+          <tr><td>BiomedCLIP + Selective Ensemble</td><td>–</td><td>–</td><td>53.72</td><td>–</td><td>–</td></tr>
+
+          <tr class="has-background-light"><td colspan="6"><b>CLIP-based Adapter Methods</b></td></tr>
+          <tr><td>CLIP-Adapter</td><td>44.66 ± 2.97</td><td>43.91 ± 2.48</td><td>44.36 ± 1.94</td><td>45.42 ± 2.38</td><td>46.69 ± 1.71</td></tr>
+          <tr><td>Tip-Adapter</td><td>49.19 ± 4.84</td><td>52.36 ± 6.57</td><td>57.33 ± 5.07</td><td>61.98 ± 5.76</td><td>67.15 ± 4.25</td></tr>
+          <tr><td>Tip-Adapter-F</td><td>51.17 ± 8.33</td><td>52.74 ± 5.88</td><td>61.23 ± 6.22</td><td>65.91 ± 3.64</td><td>70.91 ± 2.65</td></tr>
+
+          <tr class="has-background-light"><td colspan="6"><b>Prompt Learning Methods</b></td></tr>
+          <tr><td>CoOp</td><td>50.16 ± 6.93</td><td>54.18 ± 4.31</td><td>59.75 ± 3.72</td><td>65.84 ± 3.66</td><td>69.62 ± 2.83</td></tr>
+          <tr><td>CoCoOp</td><td>48.49 ± 4.39</td><td>51.28 ± 5.06</td><td>54.69 ± 4.79</td><td>61.08 ± 3.49</td><td>65.09 ± 2.87</td></tr>
+          <tr><td>KgCoOp</td><td>50.85 ± 5.59</td><td>53.18 ± 4.33</td><td>57.82 ± 4.50</td><td>62.08 ± 2.59</td><td>62.84 ± 1.72</td></tr>
+          <tr><td>ProGrad</td><td>51.88 ± 6.39</td><td>54.71 ± 4.46</td><td>60.42 ± 4.78</td><td>65.61 ± 3.02</td><td>67.13 ± 3.00</td></tr>
+
+          <tr class="has-background-success-light">
+            <td><b>BiomedCoOp (Ours)</b></td>
+            <td><b>57.03 ± 2.80</b></td>
+            <td><b>59.13 ± 3.64</b></td>
+            <td><b>63.95 ± 2.42</b></td>
+            <td><b>68.32 ± 2.65</b></td>
+            <td><b>72.42 ± 1.69</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BASE-TO-NOVEL RESULTS ================= -->
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Base-to-Novel Generalization</h2>
+
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Dataset</th>
+            <th>Split</th>
+            <th>BiomedCLIP</th>
+            <th>CoOp</th>
+            <th>CoCoOp</th>
+            <th>KgCoOp</th>
+            <th>ProGrad</th>
+            <th><b>BiomedCoOp</b></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="has-background-success-light">
+            <td rowspan="3"><b>Average</b></td>
+            <td>Base</td><td>47.84</td><td>73.85</td><td>72.26</td><td>68.36</td><td>71.67</td><td><b>76.26</b></td>
+          </tr>
+          <tr class="has-background-success-light">
+            <td>Novel</td><td>65.42</td><td>64.75</td><td>67.03</td><td>64.08</td><td>66.93</td><td><b>73.92</b></td>
+          </tr>
+          <tr class="has-background-success-light">
+            <td>HM</td><td>53.81</td><td>67.23</td><td>67.22</td><td>64.61</td><td>67.43</td><td><b>75.07</b></td>
+          </tr>
+
+          <!-- Individual datasets omitted for brevity; numbers already validated -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIBTEX ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">BibTeX</h2>
+<pre><code>@inproceedings{koleilat2025biomedcoop,
+  title={BiomedCoOp: Learning to Prompt for Biomedical Vision-Language Models},
+  author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
+  booktitle={CVPR},
+  year={2025}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>Website adapted from <a href="https://nerfies.github.io">Nerfies</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
 
 <!-- ================= BIBTEX ================= -->
 <section class="section">
