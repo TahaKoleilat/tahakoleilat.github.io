@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="MedCLIP-SAMv2: Towards Universal Text-Driven Medical Image Segmentation">
+  <meta name="keywords"
+        content="MedCLIP-SAMv2, MedCLIP-SAM, BiomedCLIP, CLIP, SAM, Zero-shot Segmentation, Weakly Supervised Segmentation, Medical Imaging">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MedCLIP-SAMv2</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="title is-1 publication-title">
+        MedCLIP-SAMv2: Towards Universal Text-Driven Medical Image Segmentation
+      </h1>
+
+      <div class="is-size-5 publication-authors">
+        Taha Koleilat · Hojat Asgariandehkordi · Hassan Rivaz · Yiming Xiao
+      </div>
+
+      <div class="is-size-6 publication-authors">
+        Concordia University · Health-X Lab · IMPACT Lab
+      </div>
+
+      <div class="buttons is-centered mt-4">
+        <a class="button is-dark is-rounded" href="https://www.arxiv.org/abs/2409.19483" target="_blank">
+          <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+        </a>
+
+        <a class="button is-dark is-rounded" href="https://github.com/HealthX-Lab/MedCLIP-SAMv2" target="_blank">
+          <span class="icon">
+            <img src="./static/icons/github.webp" alt="GitHub" style="height:18px;">
+          </span>
+          <span>Code</span>
+        </a>
+
+        <a class="button is-dark is-rounded" href="#datasets">
+          <span class="icon">
+            <img src="./static/icons/datasets.png" alt="Datasets" style="height:18px;">
+          </span>
+          <span>Datasets</span>
+        </a>
+
+        <a class="button is-dark is-rounded" href="#colab-demo">
+          <span class="icon">
+            <img src="./static/icons/demo.png" alt="Demo" style="height:18px;">
+          </span>
+          <span>Demo</span>
+        </a>
+
+        <a class="button is-dark is-rounded" href="#BibTeX">
+          <span class="icon">
+            <img src="./static/icons/bibtex.png" alt="BibTeX" style="height:18px;">
+          </span>
+          <span>BibTeX</span>
+        </a>
+      </div>
+
+      <p class="is-size-7 has-text-grey mt-2">
+        Published in <i>Medical Image Analysis</i> (2025).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEASER ================= -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- From the paper: Fig. 3 (Framework overview) -->
+      <img src="./static/images/components.png" class="teaser-image" alt="MedCLIP-SAMv2 framework overview">
+      <h2 class="subtitle has-text-centered">
+        MedCLIP-SAMv2 integrates BiomedCLIP fine-tuning (DHN-NCE), text-driven saliency (M2IB),
+        SAM-based refinement, and uncertainty-aware weak supervision.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABSTRACT ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        Segmentation of anatomical structures and pathologies in medical images is essential for modern disease
+        diagnosis, clinical research, and treatment planning. While significant advancements have been made in deep
+        learning-based segmentation techniques, many of these methods still suffer from limitations in data efficiency,
+        generalizability, and interactivity. Recently, foundation models like CLIP and Segment-Anything-Model (SAM)
+        have paved the way for interactive and universal image segmentation. In this work, we introduce
+        <b>MedCLIP-SAMv2</b>, a framework that integrates <b>BiomedCLIP</b> and <b>SAM</b> to perform
+        <b>text-driven medical image segmentation</b> in <b>zero-shot</b> and <b>weakly supervised</b> settings.
+        The approach fine-tunes BiomedCLIP with a new <b>DHN-NCE</b> loss and leverages <b>M2IB</b> to create
+        visual prompts for SAM; we also explore uncertainty-aware refinement via checkpoint ensembling.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section class="section is-light" id="overview">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Overview</h2>
+
+    <div class="content has-text-justified">
+      <ul>
+        <li><b>DHN-NCE Fine-tuning:</b> Improves BiomedCLIP cross-modal alignment by emphasizing hard negatives and decoupling positives for efficient training.</li>
+        <li><b>Text-driven Saliency (M2IB):</b> Generates attribution maps conditioned on prompts (including LLM-generated descriptions).</li>
+        <li><b>SAM Refinement:</b> Converts saliency into box/point prompts and refines masks with SAM.</li>
+        <li><b>Weak Supervision + Uncertainty:</b> Trains nnUNet on pseudo-labels; checkpoint ensembling yields refined masks and uncertainty maps.</li>
+      </ul>
+    </div>
+
+    <div class="columns is-multiline is-variable is-4 mt-4">
+      <div class="column is-12">
+        <figure class="image">
+          <!-- From the paper: Fig. 1 (Essential components) -->
+          <img src="./static/images/framework.png" alt="Essential components of MedCLIP-SAMv2">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            Essential components of the framework (paper Fig. 1).
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="column is-12">
+        <figure class="image">
+          <!-- From the paper: Fig. 2 (DHN-NCE vs standard CLIP loss) -->
+          <img src="./static/images/ourloss.png" alt="DHN-NCE loss illustration">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            DHN-NCE prioritizes hard negatives compared to standard CLIP-style contrastive loss (paper Fig. 2).
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Key Results</h2>
+
+    <div class="content has-text-justified">
+      <p>
+        We evaluate on four modalities/tasks: <b>breast tumor ultrasound</b>, <b>brain tumor MRI</b>, <b>lung X-ray</b>, and <b>lung CT</b>.
+        Below are the main comparison and ablation tables (transcribed from the paper). Replace/extend as needed.
+      </p>
+    </div>
+
+    <!-- ===== Table 1 (Main comparison) ===== -->
+    <h3 class="title is-4">Comparison with SOTA Methods</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th rowspan="2">Setting</th>
+            <th rowspan="2">Method</th>
+            <th colspan="2">Breast US</th>
+            <th colspan="2">Brain MRI</th>
+            <th colspan="2">Lung X-ray</th>
+            <th colspan="2">Lung CT</th>
+            <th colspan="2">All</th>
+          </tr>
+          <tr>
+            <th>DSC↑</th><th>NSD↑</th>
+            <th>DSC↑</th><th>NSD↑</th>
+            <th>DSC↑</th><th>NSD↑</th>
+            <th>DSC↑</th><th>NSD↑</th>
+            <th>DSC↑</th><th>NSD↑</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="has-background-light"><td colspan="12"><b>Zero-shot</b></td></tr>
+          <tr><td>Zero-shot</td><td>SaLIP</td><td>44.33±10.12</td><td>48.62±10.25</td><td>47.96±9.14</td><td>50.24±9.26</td><td>63.14±11.34</td><td>66.44±11.58</td><td>76.32±11.22</td><td>78.46±11.35</td><td>57.94±10.49</td><td>60.94±10.65</td></tr>
+          <tr><td>Zero-shot</td><td>SAMAug</td><td>56.39±10.85</td><td>59.23±10.92</td><td>45.71±10.34</td><td>48.81±11.29</td><td>57.18±12.12</td><td>60.08±12.34</td><td>44.61±10.42</td><td>46.48±10.57</td><td>50.97±10.96</td><td>53.65±11.30</td></tr>
+          <tr><td>Zero-shot</td><td>MedCLIP-SAM</td><td>67.82±8.26</td><td>69.12±9.12</td><td>66.72±5.27</td><td>68.01±6.16</td><td>64.49±9.09</td><td>65.89±10.44</td><td>59.14±9.52</td><td>60.47±9.98</td><td>64.54±8.20</td><td>66.10±9.08</td></tr>
+          <tr class="has-background-success-light">
+            <td>Zero-shot</td><td><b>MedCLIP-SAMv2 (Ours)</b></td>
+            <td><b>77.76±9.52</b></td><td><b>81.11±9.89</b></td>
+            <td><b>76.52±7.06</b></td><td><b>82.23±7.13</b></td>
+            <td><b>75.79±3.44</b></td><td><b>80.88±3.52</b></td>
+            <td><b>80.38±5.81</b></td><td><b>82.03±5.94</b></td>
+            <td><b>77.61±6.82</b></td><td><b>81.56±7.00</b></td>
+          </tr>
+
+          <tr class="has-background-light"><td colspan="12"><b>Weakly supervised</b></td></tr>
+          <tr><td>Weak</td><td>nnUNet (pseudo-labels)</td><td>73.77±14.48</td><td>79.71±14.79</td><td>77.16±12.17</td><td>85.21±12.60</td><td>70.15±6.40</td><td>74.10±6.59</td><td>82.24±5.12</td><td>85.65±4.70</td><td>75.83±10.31</td><td>81.17±10.52</td></tr>
+          <tr><td>Weak</td><td>MedCLIP-SAM</td><td>58.62±5.66</td><td>60.94±5.87</td><td>58.80±8.63</td><td>61.77±8.64</td><td>86.07±8.61</td><td>88.65±8.09</td><td>80.12±8.38</td><td>83.73±8.29</td><td>70.90±7.92</td><td>73.77±7.80</td></tr>
+          <tr class="has-background-success-light">
+            <td>Weak</td><td><b>MedCLIP-SAMv2 (Ours)</b></td>
+            <td><b>78.87±12.29</b></td><td><b>84.58±12.19</b></td>
+            <td><b>80.03±9.91</b></td><td><b>88.25±10.04</b></td>
+            <td><b>80.77±4.44</b></td><td><b>84.53±4.51</b></td>
+            <td><b>88.78±4.43</b></td><td><b>91.95±4.06</b></td>
+            <td><b>82.11±8.49</b></td><td><b>87.33±8.46</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Table 2 (Retrieval / DHN-NCE) ===== -->
+    <h3 class="title is-4 mt-6">DHN-NCE Improves Cross-modal Retrieval</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th rowspan="2">Model</th>
+            <th rowspan="2">Version / Loss</th>
+            <th colspan="2">image → text (%)</th>
+            <th colspan="2">text → image (%)</th>
+          </tr>
+          <tr>
+            <th>Top-1</th><th>Top-2</th>
+            <th>Top-1</th><th>Top-2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CLIP</td><td>Pre-trained</td><td>26.68±0.30</td><td>41.80±0.19</td><td>26.17±0.20</td><td>41.13±0.20</td></tr>
+          <tr><td>PMC-CLIP</td><td>Pre-trained</td><td>75.47±0.37</td><td>87.46±0.11</td><td>76.78±0.11</td><td>88.35±0.19</td></tr>
+          <tr><td>BiomedCLIP</td><td>Pre-trained</td><td>81.83±0.20</td><td>92.79±0.13</td><td>81.36±0.48</td><td>92.27±0.14</td></tr>
+          <tr><td>BiomedCLIP</td><td>InfoNCE</td><td>84.21±0.35</td><td>94.47±0.19</td><td>85.73±0.19</td><td>94.99±0.16</td></tr>
+          <tr><td>BiomedCLIP</td><td>DCL</td><td>84.44±0.37</td><td>94.68±0.19</td><td>85.89±0.16</td><td>95.09±0.19</td></tr>
+          <tr><td>BiomedCLIP</td><td>HN-NCE</td><td>84.33±0.35</td><td>94.60±0.19</td><td>85.80±0.17</td><td>95.10±0.19</td></tr>
+          <tr class="has-background-success-light"><td><b>BiomedCLIP</b></td><td><b>DHN-NCE (Ours)</b></td><td><b>84.70±0.33</b></td><td><b>94.73±0.16</b></td><td><b>85.99±0.19</b></td><td><b>95.17±0.19</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Table 4 (Component ablation) ===== -->
+    <h3 class="title is-4 mt-6">Ablation: Contribution of Each Component</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Step</th>
+            <th>Method</th>
+            <th>DSC↑</th>
+            <th>NSD↑</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Saliency maps</td><td>46.23±8.58</td><td>50.50±8.86</td></tr>
+          <tr><td>2</td><td>+ DHN-NCE fine-tuning</td><td>49.10±8.46</td><td>53.54±8.62</td></tr>
+          <tr><td>3</td><td>+ Post-processing</td><td>51.62±7.57</td><td>55.23±7.47</td></tr>
+          <tr><td>4</td><td>+ Connected component analysis</td><td>57.89±7.87</td><td>61.54±8.02</td></tr>
+          <tr><td>5</td><td>+ SAM</td><td>77.61±6.82</td><td>81.56±7.00</td></tr>
+          <tr class="has-background-success-light"><td>6</td><td><b>+ nnUNet ensemble</b></td><td><b>82.11±8.49</b></td><td><b>87.33±8.46</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ================= FIGURE: SAMPLE RESULTS ================= -->
+    <h3 class="title is-4 mt-6">Qualitative Results</h3>
+    <div class="content has-text-justified">
+      <p>
+        Add the paper’s qualitative figure(s) and/or the repo’s example montage here.
+        (Recommended filenames below follow the same pattern as your BiomedCoOp site.)
+      </p>
+    </div>
+    <figure class="image">
+      <img src="./static/images/segexamples.png" alt="Sample segmentation results">
+      <figcaption class="has-text-centered is-size-7 mt-2">
+        Sample text-driven segmentation outputs across modalities (replace with the paper’s key qualitative figure).
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<section class="section" id="saliency-comparison">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">
+      Cross-Modal Saliency Comparison
+    </h2>
+
+    <div class="content has-text-justified">
+      <p>
+        We compare text-driven saliency maps generated using <b>BiomedCLIP</b> and
+        standard <b>CLIP</b> across four representative medical imaging modalities:
+        brain MRI, breast ultrasound, chest X-ray, and chest CT.
+        BiomedCLIP consistently produces more localized and anatomically meaningful
+        responses aligned with clinically relevant regions, while standard CLIP
+        often exhibits diffuse or semantically ambiguous activations.
+      </p>
+    </div>
+
+    <figure class="image">
+      <img src="./static/images/clipfeatures.png"
+           alt="Comparison of BiomedCLIP and CLIP saliency maps across modalities">
+      <figcaption class="has-text-centered is-size-7 mt-2">
+        <b>Top:</b> Input images.
+        <b>Middle:</b> BiomedCLIP saliency maps.
+        <b>Bottom:</b> CLIP saliency maps.
+        Across all modalities, BiomedCLIP demonstrates improved localization and
+        clinical relevance compared to standard CLIP.
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+
+<!-- ================= DEMO ================= -->
+<section class="section" id="colab-demo">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Colab Demo</h2>
+    <div class="content has-text-centered">
+      <p>
+        Interactive notebook demo:
+      </p>
+      <p>
+        <a class="button is-dark is-rounded"
+           href="https://colab.research.google.com/drive/1Hf_ticAbO7Oyh5Rat2XqQ-FAkm4vk3RQ?usp=sharing"
+           target="_blank">
+          <span class="icon"><img src="./static/icons/colab.png" alt="Colab" style="height:18px;"></span>
+          <span>Open in Colab</span>
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= BIBTEX ================= -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">BibTeX</h2>
+<pre><code>@article{koleilat2024medclipsamv2,
+  title={MedCLIP-SAMv2: Towards Universal Text-Driven Medical Image Segmentation},
+  author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
+  journal={arXiv preprint arXiv:2409.19483},
+  year={2024}
+}
+
+@inproceedings{koleilat2024medclip,
+  title={MedCLIP-SAM: Bridging text and image towards universal medical image segmentation},
+  author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  pages={643--653},
+  year={2024},
+  organization={Springer}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      Website adapted from <a href="https://nerfies.github.io" target="_blank">Nerfies</a>.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
