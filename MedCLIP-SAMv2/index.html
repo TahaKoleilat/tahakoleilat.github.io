@@ -56,7 +56,7 @@
 
         <a class="button is-dark is-rounded" href="#colab-demo">
           <span class="icon">
-            <img src="./static/icons/demo.png" alt="Demo" style="height:18px;">
+            <img src="./static/icons/colab.png" alt="Demo" style="height:18px;">
           </span>
           <span>Demo</span>
         </a>
@@ -130,7 +130,7 @@
           <!-- From the paper: Fig. 1 (Essential components) -->
           <img src="./static/images/framework.png" alt="Essential components of MedCLIP-SAMv2">
           <figcaption class="has-text-centered is-size-7 mt-2">
-            Essential components of the framework (paper Fig. 1).
+            Essential components of the framework.
           </figcaption>
         </figure>
       </div>
@@ -140,7 +140,7 @@
           <!-- From the paper: Fig. 2 (DHN-NCE vs standard CLIP loss) -->
           <img src="./static/images/ourloss.png" alt="DHN-NCE loss illustration">
           <figcaption class="has-text-centered is-size-7 mt-2">
-            DHN-NCE prioritizes hard negatives compared to standard CLIP-style contrastive loss (paper Fig. 2).
+            DHN-NCE prioritizes hard negatives compared to standard CLIP-style contrastive loss.
           </figcaption>
         </figure>
       </div>
@@ -157,7 +157,7 @@
     <div class="content has-text-justified">
       <p>
         We evaluate on four modalities/tasks: <b>breast tumor ultrasound</b>, <b>brain tumor MRI</b>, <b>lung X-ray</b>, and <b>lung CT</b>.
-        Below are the main comparison and ablation tables (transcribed from the paper). Replace/extend as needed.
+        Below are the main comparison and ablation tables.
       </p>
     </div>
 
@@ -267,14 +267,18 @@
     <h3 class="title is-4 mt-6">Qualitative Results</h3>
     <div class="content has-text-justified">
       <p>
-        Add the paper’s qualitative figure(s) and/or the repo’s example montage here.
-        (Recommended filenames below follow the same pattern as your BiomedCoOp site.)
+        We present qualitative segmentation results produced by <b>MedCLIP-SAMv2</b> across
+        diverse imaging modalities, including brain MRI, breast ultrasound, chest X-ray,
+        and chest CT. The results demonstrate that text-driven prompts, combined with
+        BiomedCLIP-based saliency and SAM-based refinement, yield accurate and coherent
+        segmentations that align well with anatomical structures and pathological regions,
+        even in the absence of pixel-level supervision.
       </p>
     </div>
     <figure class="image">
       <img src="./static/images/segexamples.png" alt="Sample segmentation results">
       <figcaption class="has-text-centered is-size-7 mt-2">
-        Sample text-driven segmentation outputs across modalities (replace with the paper’s key qualitative figure).
+        Sample text-driven segmentation outputs across modalities.
       </figcaption>
     </figure>
 
