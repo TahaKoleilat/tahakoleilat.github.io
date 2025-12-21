@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Singular Value Few-shot Adaptation of Vision-Language Models">
+  <meta name="keywords"
+        content="CLIP-SVD, Vision-Language Models, Few-shot Learning, CLIP, BiomedCLIP, Medical Imaging">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLIP-SVD</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="title is-1 publication-title">
+        Singular Value Few-shot Adaptation of Vision-Language Models
+      </h1>
+
+      <div class="is-size-5 publication-authors">
+        Taha Koleilat · Hassan Rivaz · Yiming Xiao
+      </div>
+
+      <div class="is-size-6 publication-authors">
+        Concordia University · Health-X Lab · IMPACT Lab
+      </div>
+
+      <div class="buttons is-centered mt-4">
+        <a class="button is-dark is-rounded"
+           href="https://arxiv.org/abs/2509.03740"
+           target="_blank">
+          <span class="icon"><i class="ai ai-arxiv"></i></span>
+          <span>arXiv</span>
+        </a>
+
+        <a class="button is-dark is-rounded"
+           href="https://github.com/HealthX-Lab/CLIP-SVD"
+           target="_blank">
+          <span class="icon">
+            <img src="./static/icons/github.webp" style="height:18px;">
+          </span>
+          <span>Code</span>
+        </a>
+
+        <a class="button is-dark is-rounded"
+           href="https://huggingface.co/datasets/TahaKoleilat/BiomedCoOp"
+           target="_blank">
+          <span class="icon">
+            <img src="./static/icons/datasets.png" style="height:18px;">
+          </span>
+          <span>Datasets</span>
+        </a>
+
+        <a class="button is-dark is-rounded"
+           href="https://github.com/HealthX-Lab/CLIP-SVD/blob/main/medical_image_descriptions.txt"
+           target="_blank">
+          <span class="icon">
+            <img src="./static/icons/corpus.png" style="height:18px;">
+          </span>
+          <span>Corpus</span>
+        </a>
+
+        <a class="button is-dark is-rounded" href="#BibTeX">
+          <span class="icon">
+            <img src="./static/icons/bibtex.png" style="height:18px;">
+          </span>
+          <span>BibTeX</span>
+        </a>
+      </div>
+
+      <p class="is-size-7 has-text-grey mt-2">
+        arXiv preprint (2025).
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEASER ================= -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/overview.png"
+           class="teaser-image"
+           alt="CLIP-SVD overview">
+      <h2 class="subtitle has-text-centered">
+        CLIP-SVD adapts vision–language models by fine-tuning only singular values,
+        achieving state-of-the-art few-shot performance using just 0.04% of parameters.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABSTRACT ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        Vision-language models (VLMs) such as CLIP demonstrate strong zero-shot and
+        few-shot generalization, yet adapting them to new fine-grained domains
+        remains challenging. We propose <b>CLIP-SVD</b>, a parameter-efficient
+        adaptation strategy that fine-tunes only the <b>singular values</b> of
+        CLIP parameter matrices while preserving pretrained bases. CLIP-SVD
+        achieves state-of-the-art results on <b>11 natural</b> and
+        <b>10 biomedical</b> datasets using only <b>0.04%</b> of model parameters
+        and enables natural language-based interpretability of adaptation dynamics.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section class="section is-light" id="overview">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+
+    <div class="content has-text-justified">
+      <ul>
+        <li><b>SVD-based Adaptation:</b> Fine-tunes only singular values.</li>
+        <li><b>Extreme Parameter Efficiency:</b> 0.04% trainable parameters.</li>
+        <li><b>Multi-modal:</b> Applicable to CLIP and BiomedCLIP.</li>
+        <li><b>Preserved Generalization:</b> Keeps pretrained bases intact.</li>
+        <li><b>Interpretability:</b> Natural language analysis of singular value dynamics.</li>
+      </ul>
+    </div>
+
+    <figure class="image">
+      <img src="./static/images/CLIP-SVD.png" alt="CLIP-SVD method">
+      <figcaption class="has-text-centered is-size-7 mt-2">
+        CLIP-SVD adapts models by rescaling singular values while preserving pretrained bases.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section class="section" id="results">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+
+    <div class="content">
+
+### Natural Few-shot Evaluation
+
+| Method | K=1 | K=2 | K=4 | K=8 | K=16 |
+|------|:---:|:---:|:---:|:---:|:---:|
+| Zero-shot CLIP | – | – | 65.36 | – | – |
+| CoOp | 68.09 | 70.13 | 73.59 | 76.45 | 79.01 |
+| MaPLe | 69.27 | 72.58 | 75.37 | 78.89 | 81.79 |
+| CLIP-LoRA | _72.20_ | _75.41_ | _77.32_ | _80.10_ | _82.89_ |
+| **CLIP-SVD (Ours)** | **73.20** | **76.06** | **78.18** | **80.55** | **82.97** |
+
+---
+
+### Biomedical Few-shot Evaluation
+
+| Method | K=1 | K=2 | K=4 | K=8 | K=16 |
+|------|:---:|:---:|:---:|:---:|:---:|
+| Zero-shot BiomedCLIP | – | – | 42.38 | – | – |
+| CoOp | 52.59 | 55.71 | 61.35 | 67.74 | 71.48 |
+| BiomedCoOp | **56.87** | _59.32_ | _64.34_ | _68.96_ | _73.41_ |
+| **CLIP-SVD (Ours)** | _56.35_ | **62.63** | **68.02** | **73.26** | **76.46** |
+
+---
+
+### Base-to-Novel Generalization (Biomedical)
+
+| Method | Base | Novel | HM |
+|------|:----:|:-----:|:--:|
+| BiomedCLIP | 49.27 | 67.17 | 55.23 |
+| BiomedCoOp | 78.60 | 73.90 | 74.04 |
+| **CLIP-SVD (Ours)** | **82.64** | **74.31** | **78.25** |
+
+---
+
+### Interpretability Evaluation
+
+CLIP-SVD enables a principled analysis of adaptation dynamics by inspecting
+ranked singular value updates and mapping them to natural language concepts.
+This facilitates interpretation of <i>which semantic dimensions are amplified
+or suppressed</i> during few-shot learning, while preserving the pretrained
+representation structure.
+
+<figure class="image mt-4">
+  <img src="./static/images/interpretability_table.png"
+       alt="Interpretability analysis of CLIP-SVD using singular value rankings">
+  <figcaption class="has-text-centered is-size-7 mt-2">
+    Interpretability analysis of CLIP-SVD.
+    Ranked singular value updates are associated with natural language
+    descriptions, revealing task-relevant semantic shifts while maintaining
+    stable lower-rank representations.
+  </figcaption>
+</figure>
+
+These results demonstrate that CLIP-SVD adapts vision–language models in a
+<b>structured and interpretable manner</b>, avoiding the opaque parameter
+perturbations commonly introduced by adapter- or prompt-based methods.
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIBTEX ================= -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">BibTeX</h2>
+<pre><code>@article{koleilat2025singular,
+  title={Singular Value Few-shot Adaptation of Vision-Language Models},
+  author={Koleilat, Taha and Rivaz, Hassan and Xiao, Yiming},
+  journal={arXiv preprint arXiv:2509.03740},
+  year={2025}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      Website adapted from <a href="https://nerfies.github.io">Nerfies</a>.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
