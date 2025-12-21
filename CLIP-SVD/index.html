@@ -107,16 +107,31 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Abstract</h2>
     <div class="content has-text-justified">
-      <p>
-        Vision-language models (VLMs) such as CLIP demonstrate strong zero-shot and
-        few-shot generalization, yet adapting them to new fine-grained domains
-        remains challenging. We propose <b>CLIP-SVD</b>, a parameter-efficient
-        adaptation strategy that fine-tunes only the <b>singular values</b> of
-        CLIP parameter matrices while preserving pretrained bases. CLIP-SVD
-        achieves state-of-the-art results on <b>11 natural</b> and
-        <b>10 biomedical</b> datasets using only <b>0.04%</b> of model parameters
-        and enables natural language-based interpretability of adaptation dynamics.
-      </p>
+      <p style="text-align: justify;">
+  <strong>Abstract:</strong>
+  <em>
+    Vision-language models (VLMs) like CLIP have shown impressive zero-shot and
+    few-shot learning capabilities across diverse applications. However, adapting
+    these models to new fine-grained domains remains difficult due to reliance on
+    prompt engineering and the high cost of full model fine-tuning. Existing
+    adaptation approaches rely on augmented components, such as prompt tokens and
+    adapter modules, which could limit adaptation quality, destabilize the model,
+    and compromise the rich knowledge learned during pretraining. In this work, we
+    present <strong>CLIP-SVD</strong>, a novel <em>multi-modal</em> and
+    <em>parameter-efficient</em> adaptation technique that leverages Singular Value
+    Decomposition (SVD) to modify the internal parameter space of CLIP without
+    injecting additional modules. Specifically, we fine-tune only the singular
+    values of the CLIP parameter matrices to rescale the basis vectors for domain
+    adaptation while retaining the pretrained model. This design enables enhanced
+    adaptation performance using only <strong>0.04%</strong> of the model's total
+    parameters and better preservation of its generalization ability. CLIP-SVD
+    achieves state-of-the-art classification results on 11 natural and 10 biomedical
+    datasets, outperforming previous methods in both accuracy and generalization
+    under few-shot settings. Additionally, we leverage a natural language-based
+    approach to analyze the effectiveness and dynamics of the CLIP adaptation to
+    enable interpretability of <strong>CLIP-SVD</strong>.
+  </em>
+</p>
     </div>
   </div>
 </section>
@@ -146,72 +161,143 @@
 </section>
 
 <!-- ================= RESULTS ================= -->
+<!-- ================= RESULTS ================= -->
 <section class="section" id="results">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Results</h2>
 
-    <div class="content">
-
-### Natural Few-shot Evaluation
-
-| Method | K=1 | K=2 | K=4 | K=8 | K=16 |
-|------|:---:|:---:|:---:|:---:|:---:|
-| Zero-shot CLIP | – | – | 65.36 | – | – |
-| CoOp | 68.09 | 70.13 | 73.59 | 76.45 | 79.01 |
-| MaPLe | 69.27 | 72.58 | 75.37 | 78.89 | 81.79 |
-| CLIP-LoRA | _72.20_ | _75.41_ | _77.32_ | _80.10_ | _82.89_ |
-| **CLIP-SVD (Ours)** | **73.20** | **76.06** | **78.18** | **80.55** | **82.97** |
-
----
-
-### Biomedical Few-shot Evaluation
-
-| Method | K=1 | K=2 | K=4 | K=8 | K=16 |
-|------|:---:|:---:|:---:|:---:|:---:|
-| Zero-shot BiomedCLIP | – | – | 42.38 | – | – |
-| CoOp | 52.59 | 55.71 | 61.35 | 67.74 | 71.48 |
-| BiomedCoOp | **56.87** | _59.32_ | _64.34_ | _68.96_ | _73.41_ |
-| **CLIP-SVD (Ours)** | _56.35_ | **62.63** | **68.02** | **73.26** | **76.46** |
-
----
-
-### Base-to-Novel Generalization (Biomedical)
-
-| Method | Base | Novel | HM |
-|------|:----:|:-----:|:--:|
-| BiomedCLIP | 49.27 | 67.17 | 55.23 |
-| BiomedCoOp | 78.60 | 73.90 | 74.04 |
-| **CLIP-SVD (Ours)** | **82.64** | **74.31** | **78.25** |
-
----
-
-### Interpretability Evaluation
-
-CLIP-SVD enables a principled analysis of adaptation dynamics by inspecting
-ranked singular value updates and mapping them to natural language concepts.
-This facilitates interpretation of <i>which semantic dimensions are amplified
-or suppressed</i> during few-shot learning, while preserving the pretrained
-representation structure.
-
-<figure class="image mt-4">
-  <img src="./static/images/interpretability_table.png"
-       alt="Interpretability analysis of CLIP-SVD using singular value rankings">
-  <figcaption class="has-text-centered is-size-7 mt-2">
-    Interpretability analysis of CLIP-SVD.
-    Ranked singular value updates are associated with natural language
-    descriptions, revealing task-relevant semantic shifts while maintaining
-    stable lower-rank representations.
-  </figcaption>
-</figure>
-
-These results demonstrate that CLIP-SVD adapts vision–language models in a
-<b>structured and interpretable manner</b>, avoiding the opaque parameter
-perturbations commonly introduced by adapter- or prompt-based methods.
-
-
+    <!-- ===== Natural Few-shot Evaluation ===== -->
+    <h3 class="title is-4 mt-5">Natural Few-shot Evaluation</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>K = 1</th>
+            <th>K = 2</th>
+            <th>K = 4</th>
+            <th>K = 8</th>
+            <th>K = 16</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Zero-shot CLIP</td>
+            <td>–</td><td>–</td><td>65.36</td><td>–</td><td>–</td>
+          </tr>
+          <tr>
+            <td>CoOp</td>
+            <td>68.09</td><td>70.13</td><td>73.59</td><td>76.45</td><td>79.01</td>
+          </tr>
+          <tr>
+            <td>MaPLe</td>
+            <td>69.27</td><td>72.58</td><td>75.37</td><td>78.89</td><td>81.79</td>
+          </tr>
+          <tr>
+            <td>CLIP-LoRA</td>
+            <td><i>72.20</i></td><td><i>75.41</i></td><td><i>77.32</i></td>
+            <td><i>80.10</i></td><td><i>82.89</i></td>
+          </tr>
+          <tr class="has-background-success-light">
+            <td><b>CLIP-SVD (Ours)</b></td>
+            <td><b>73.20</b></td><td><b>76.06</b></td><td><b>78.18</b></td>
+            <td><b>80.55</b></td><td><b>82.97</b></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
+    <!-- ===== Biomedical Few-shot Evaluation ===== -->
+    <h3 class="title is-4 mt-6">Biomedical Few-shot Evaluation</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>K = 1</th>
+            <th>K = 2</th>
+            <th>K = 4</th>
+            <th>K = 8</th>
+            <th>K = 16</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Zero-shot BiomedCLIP</td>
+            <td>–</td><td>–</td><td>42.38</td><td>–</td><td>–</td>
+          </tr>
+          <tr>
+            <td>CoOp</td>
+            <td>52.59</td><td>55.71</td><td>61.35</td><td>67.74</td><td>71.48</td>
+          </tr>
+          <tr>
+            <td>BiomedCoOp</td>
+            <td><b>56.87</b></td><td><i>59.32</i></td><td><i>64.34</i></td>
+            <td><i>68.96</i></td><td><i>73.41</i></td>
+          </tr>
+          <tr class="has-background-success-light">
+            <td><b>CLIP-SVD (Ours)</b></td>
+            <td><i>56.35</i></td><td><b>62.63</b></td><td><b>68.02</b></td>
+            <td><b>73.26</b></td><td><b>76.46</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Base-to-Novel Generalization ===== -->
+    <h3 class="title is-4 mt-6">Base-to-Novel Generalization (Biomedical)</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Base</th>
+            <th>Novel</th>
+            <th>HM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BiomedCLIP</td>
+            <td>49.27</td><td>67.17</td><td>55.23</td>
+          </tr>
+          <tr>
+            <td>BiomedCoOp</td>
+            <td>78.60</td><td>73.90</td><td>74.04</td>
+          </tr>
+          <tr class="has-background-success-light">
+            <td><b>CLIP-SVD (Ours)</b></td>
+            <td><b>82.64</b></td><td><b>74.31</b></td><td><b>78.25</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Interpretability Evaluation ===== -->
+    <h3 class="title is-4 mt-6">Interpretability Evaluation</h3>
+    <div class="content has-text-justified">
+      <p>
+        CLIP-SVD enables a principled analysis of adaptation dynamics by inspecting
+        ranked singular value updates and mapping them to natural language concepts.
+        This facilitates interpretation of <i>which semantic dimensions are amplified
+        or suppressed</i> during few-shot learning, while preserving the pretrained
+        representation structure.
+      </p>
+    </div>
+
+    <figure class="image mt-4">
+      <img src="./static/images/interpretability_table.png"
+           alt="Interpretability analysis of CLIP-SVD using singular value rankings">
+      <figcaption class="has-text-centered is-size-7 mt-2">
+        Interpretability analysis of CLIP-SVD. Ranked singular value updates are
+        associated with natural language descriptions, revealing task-relevant
+        semantic shifts while maintaining stable lower-rank representations.
+      </figcaption>
+    </figure>
+
   </div>
 </section>
+
 
 <!-- ================= BIBTEX ================= -->
 <section class="section" id="BibTeX">
