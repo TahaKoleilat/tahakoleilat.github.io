@@ -34,7 +34,7 @@
       </div>
 
       <div class="is-size-6 publication-authors">
-        Concordia University · Health-X Lab · IMPACT Lab
+        Concordia University · IMPACT Lab · Health-X Lab
       </div>
 
       <div class="buttons is-centered mt-4">
@@ -245,33 +245,132 @@
     </div>
 
     <!-- ===== Base-to-Novel Generalization ===== -->
-    <h3 class="title is-4 mt-6">Base-to-Novel Generalization (Biomedical)</h3>
-    <div class="table-container">
-      <table class="table is-bordered is-striped is-hoverable is-fullwidth">
-        <thead>
-          <tr>
-            <th>Method</th>
-            <th>Base</th>
-            <th>Novel</th>
-            <th>HM</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>BiomedCLIP</td>
-            <td>49.27</td><td>67.17</td><td>55.23</td>
-          </tr>
-          <tr>
-            <td>BiomedCoOp</td>
-            <td>78.60</td><td>73.90</td><td>74.04</td>
-          </tr>
-          <tr class="has-background-success-light">
-            <td><b>CLIP-SVD (Ours)</b></td>
-            <td><b>82.64</b></td><td><b>74.31</b></td><td><b>78.25</b></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+     <!-- ===== Base-to-Novel Generalization (Natural) ===== -->
+<h3 class="title is-4 mt-6">Base-to-Novel Generalization (Natural)</h3>
+<div class="table-container">
+  <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Base</th>
+        <th>Novel</th>
+        <th>HM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CLIP</td>
+        <td>69.34</td><td>74.22</td><td>71.70</td>
+      </tr>
+      <tr>
+        <td>CoOp</td>
+        <td>82.69</td><td>63.22</td><td>71.66</td>
+      </tr>
+      <tr>
+        <td>CoCoOp</td>
+        <td>80.47</td><td>71.69</td><td>75.83</td>
+      </tr>
+      <tr>
+        <td>KgCoOp</td>
+        <td>80.73</td><td>73.60</td><td>77.00</td>
+      </tr>
+      <tr>
+        <td>ProGrad</td>
+        <td>82.48</td><td>70.75</td><td>76.16</td>
+      </tr>
+      <tr>
+        <td>MaPLe</td>
+        <td>82.28</td><td>75.14</td><td>78.55</td>
+      </tr>
+      <tr>
+        <td>IVLP</td>
+        <td>84.21</td><td>71.79</td><td>77.51</td>
+      </tr>
+      <tr>
+        <td>GDA</td>
+        <td>83.96</td><td>74.53</td><td>78.72</td>
+      </tr>
+      <tr>
+        <td>TCP</td>
+        <td>84.13</td><td>75.36</td><td>79.51</td>
+      </tr>
+      <tr>
+        <td>CLIP-LoRA</td>
+        <td>84.10</td><td>74.80</td><td>79.18</td>
+      </tr>
+      <tr class="has-background-success-light">
+        <td><b>CLIP-SVD (Ours)</b></td>
+        <td><b>84.38</b></td><td><b>76.29</b></td><td><b>80.13</b></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    <!-- ===== Base-to-Novel Generalization (Biomedical) ===== -->
+<h3 class="title is-4 mt-6">Base-to-Novel Generalization (Biomedical)</h3>
+<div class="table-container">
+  <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Base</th>
+        <th>Novel</th>
+        <th>HM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>BiomedCLIP</td>
+        <td>49.27</td><td>67.17</td><td>55.23</td>
+      </tr>
+      <tr>
+        <td>CoOp</td>
+        <td>76.71</td><td>65.34</td><td>68.80</td>
+      </tr>
+      <tr>
+        <td>CoCoOp</td>
+        <td>75.52</td><td>67.74</td><td>69.11</td>
+      </tr>
+      <tr>
+        <td>KgCoOp</td>
+        <td>71.90</td><td>65.94</td><td>67.22</td>
+      </tr>
+      <tr>
+        <td>ProGrad</td>
+        <td>75.69</td><td>67.33</td><td>69.86</td>
+      </tr>
+      <tr>
+        <td>MaPLe</td>
+        <td>65.40</td><td>49.51</td><td>53.10</td>
+      </tr>
+      <tr>
+        <td>XCoOp</td>
+        <td>74.62</td><td>63.19</td><td>68.43</td>
+      </tr>
+      <tr>
+        <td>BiomedCoOp</td>
+        <td>78.60</td><td>73.90</td><td>74.04</td>
+      </tr>
+      <tr>
+        <td>GDA</td>
+        <td>57.70</td><td>64.66</td><td>60.98</td>
+      </tr>
+      <tr>
+        <td>DCPL</td>
+        <td>73.70</td><td>69.35</td><td>71.46</td>
+      </tr>
+      <tr>
+        <td>CLIP-LoRA</td>
+        <td>70.56</td><td>59.84</td><td>64.76</td>
+      </tr>
+      <tr class="has-background-success-light">
+        <td><b>CLIP-SVD (Ours)</b></td>
+        <td><b>82.64</b></td><td><b>74.31</b></td><td><b>78.25</b></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
     <!-- ===== Interpretability Evaluation ===== -->
     <h3 class="title is-4 mt-6">Interpretability Evaluation</h3>
