@@ -249,7 +249,6 @@
         </thead>
         <tbody>
           <tr><td>LViT</td><td>75.32</td><td>59.41</td><td>67.95</td><td>53.51</td><td>65.60</td><td>85.29</td><td>60.01</td><td>75.27</td><td>81.41</td><td>71.86</td><td>91.21</td><td>58.87</td></tr>
-          <tr><td>Ariadne’s Thread</td><td>57.26</td><td>20.67</td><td>49.36</td><td>22.29</td><td>22.19</td><td>77.42</td><td>23.08</td><td>22.99</td><td>69.96</td><td>25.89</td><td>68.37</td><td>43.43</td></tr>
           <tr><td>CLIPSeg</td><td>80.95</td><td>63.66</td><td>75.03</td><td>68.43</td><td>56.67</td><td>81.98</td><td>59.93</td><td>71.49</td><td>86.33</td><td>77.61</td><td>90.55</td><td>80.19</td></tr>
           <tr><td>DenseCLIP</td><td>71.85</td><td>53.34</td><td>70.97</td><td>63.53</td><td>54.93</td><td>79.32</td><td>56.38</td><td>68.08</td><td>70.30</td><td>34.12</td><td>89.29</td><td>53.39</td></tr>
           <tr><td>ZegCLIP</td><td>72.08</td><td>61.08</td><td>73.57</td><td>71.75</td><td>52.41</td><td>78.46</td><td>53.46</td><td>69.75</td><td>76.65</td><td>66.31</td><td>81.45</td><td>38.60</td></tr>
@@ -296,6 +295,187 @@
     </figure>
   </div>
 </section>
+
+    <!-- ================= ABLATION STUDIES ================= -->
+    <h3 class="title is-4 mt-6">Ablation Studies</h3>
+
+    <div class="content has-text-justified">
+      <p>
+        We analyze the contribution of MedCLIPSeg’s components and design choices, including
+        PVL adapters, gating, probabilistic attention, bidirectional interaction, contrastive loss,
+        prompt style, and CLIP backbone selection.
+      </p>
+    </div>
+
+    <!-- ===== Table 3: Key component ablations ===== -->
+    <h4 class="title is-5 mt-5">Effectiveness of Key Design Components</h4>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>ID DSC (%)</th>
+            <th>OOD DSC (%)</th>
+            <th>HM DSC (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr class="is-success-light">
+            <td><b>MedCLIPSeg (Ours)</b></td>
+            <td><b>89.11</b></td>
+            <td><b>79.02</b></td>
+            <td><b>83.76</b></td>
+          </tr>
+
+          <tr class="has-background-light">
+            <td colspan="4"><b>Probabilistic Vision–Language Adapters</b></td>
+          </tr>
+
+          <tr>
+            <td>w/o PVL Adapters</td>
+            <td>81.23 (−7.88)<span class="red-arrow">↓</span></td>
+            <td>55.23 (−23.79)<span class="red-arrow">↓</span></td>
+            <td>65.75 (−18.01)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr>
+            <td>w/o Gating</td>
+            <td>87.55 (−1.56)<span class="red-arrow">↓</span></td>
+            <td>76.79 (−2.23)<span class="red-arrow">↓</span></td>
+            <td>81.82 (−1.94)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr>
+            <td>w/o AttnPVL</td>
+            <td>86.21 (−2.90)<span class="red-arrow">↓</span></td>
+            <td>74.13 (−4.89)<span class="red-arrow">↓</span></td>
+            <td>79.71 (−4.05)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr>
+            <td>Deterministic MedCLIPSeg</td>
+            <td>87.68 (−1.43)<span class="red-arrow">↓</span></td>
+            <td>63.12 (−15.90)<span class="red-arrow">↓</span></td>
+            <td>73.40 (−10.36)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr class="has-background-light">
+            <td colspan="4"><b>Bidirectional Multimodal Interaction</b></td>
+          </tr>
+
+          <tr>
+            <td>w/o Visual Adaptation</td>
+            <td>81.50 (−7.61)<span class="red-arrow">↓</span></td>
+            <td>64.40 (−14.62)<span class="red-arrow">↓</span></td>
+            <td>71.95 (−11.81)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr>
+            <td>w/o Textual Adaptation</td>
+            <td>88.83 (−0.28)<span class="red-arrow">↓</span></td>
+            <td>76.40 (−2.62)<span class="red-arrow">↓</span></td>
+            <td>82.15 (−1.61)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr>
+            <td>w/o Bidirectional Interaction</td>
+            <td>88.71 (−0.40)<span class="red-arrow">↓</span></td>
+            <td>77.71 (−1.31)<span class="red-arrow">↓</span></td>
+            <td>82.85 (−0.91)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr>
+            <td>Unimodal MedCLIPSeg</td>
+            <td>86.53 (−2.58)<span class="red-arrow">↓</span></td>
+            <td>73.49 (−5.53)<span class="red-arrow">↓</span></td>
+            <td>79.48 (−4.28)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr class="has-background-light">
+            <td colspan="4"><b>Contrastive Loss</b></td>
+          </tr>
+
+          <tr>
+            <td>w/o LSoftCon</td>
+            <td>87.24 (−1.87)<span class="red-arrow">↓</span></td>
+            <td>77.08 (−1.94)<span class="red-arrow">↓</span></td>
+            <td>81.84 (−1.92)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr>
+            <td>Hard Targets</td>
+            <td>88.34 (−0.77)<span class="red-arrow">↓</span></td>
+            <td>77.64 (−1.38)<span class="red-arrow">↓</span></td>
+            <td>82.65 (−1.11)<span class="red-arrow">↓</span></td>
+          </tr>
+
+          <tr>
+            <td>Attention-pooled LSoftCon</td>
+            <td>88.73 (−0.38)<span class="red-arrow">↓</span></td>
+            <td>75.60 (−3.42)<span class="red-arrow">↓</span></td>
+            <td>81.64 (−2.12)<span class="red-arrow">↓</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Figure 5: Layer interventions + beta ===== -->
+    <h4 class="title is-5 mt-5">Layer-wise PVL Intervention and Confidence Weight (&beta;)</h4>
+    <div class="paper-figure">
+      <figure class="image">
+        <!-- Add the exported Figure 5 image here -->
+        <img src="./static/images/layers_beta_plot.png" alt="Layer-wise interventions and confidence weight (beta) ablations" />
+      </figure>
+      <p class="has-text-centered is-size-7 mt-2">
+        Layer-wise PVL adapter interventions and confidence weight (&beta;) ablations averaged on ID and OOD data.
+        Deeper interventions improve performance up to ~Layer 10, and &beta; = 2.35 yields the best harmonic mean.
+      </p>
+    </div>
+
+    <!-- ===== Table 4: Prompt design ===== -->
+    <h4 class="title is-5 mt-6">Effect of Text Prompt Design</h4>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
+        <thead>
+          <tr>
+            <th>Text Prompt Style</th>
+            <th>ID DSC (%)</th>
+            <th>OOD DSC (%)</th>
+            <th>HM DSC (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Contradictory</td><td>68.60</td><td>63.21</td><td>65.79</td></tr>
+          <tr><td>Missing Location</td><td>86.98</td><td>77.75</td><td>82.11</td></tr>
+          <tr><td>Overdescriptive</td><td>82.93</td><td>74.49</td><td>78.48</td></tr>
+          <tr><td>Underdescriptive</td><td>66.91</td><td>49.38</td><td>56.82</td></tr>
+          <tr class="is-success-light"><td><b>Original</b></td><td><b>89.11</b></td><td><b>79.02</b></td><td><b>83.76</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Table 5: Backbone ===== -->
+    <h4 class="title is-5 mt-6">Effect of Pre-trained Vision–Language Models</h4>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
+        <thead>
+          <tr>
+            <th>Pre-trained Model</th>
+            <th>ID DSC (%)</th>
+            <th>OOD DSC (%)</th>
+            <th>HM DSC (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CLIP</td><td>88.48</td><td>74.81</td><td>81.07</td></tr>
+          <tr><td>PubMedCLIP</td><td>86.67</td><td>73.05</td><td>79.28</td></tr>
+          <tr><td>BiomedCLIP</td><td>88.70</td><td>77.08</td><td>82.48</td></tr>
+          <tr class="is-success-light"><td><b>UniMedCLIP</b></td><td><b>89.11</b></td><td><b>79.02</b></td><td><b>83.76</b></td></tr>
+        </tbody>
+      </table>
+    </div>
 
 <!-- ================= BIBTEX ================= -->
 <section class="section" id="BibTeX">
