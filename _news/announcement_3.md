@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper <a href=""><b>MedCLIP-SAM</b></a> was accepted to <b>MICCAI 2024</b>, see you in <b>Marrakesh, Morocco</b>!
+Our paper <a href="https://tahakoleilat.github.io/MedCLIP-SAM/"><b>MedCLIP-SAM</b></a> was accepted to <b>MICCAI 2024</b>, see you in <b>Marrakesh, Morocco</b>!

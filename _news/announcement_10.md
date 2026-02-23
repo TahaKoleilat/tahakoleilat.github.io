@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper <a href=""><b>MedCLIP-SAMv2</b></a> was accepted to **Medical Image Analysis (MedIA)**. Congrats to all co-authors!
+Our paper <a href="https://tahakoleilat.github.io/MedCLIP-SAMv2/"><b>MedCLIP-SAMv2</b></a> was accepted to **Medical Image Analysis (MedIA)**. Congrats to all co-authors!
