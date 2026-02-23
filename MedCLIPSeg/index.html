@@ -97,8 +97,8 @@
       <!-- Put your main overview figure here -->
       <img src="./static/images/overview.png" class="teaser-image" alt="MedCLIPSeg overview figure" />
       <h2 class="subtitle has-text-centered">
-        Probabilistic vision–language fusion for robust, data-efficient medical image segmentation with pixel-level uncertainty maps.
-      </h2>
+      Probabilistic cross-modal fusion for CLIP-based medical image segmentation, modeling visual–text representations as distributions to improve robustness <i style="color:#666;">(left)</i> and uncertainty calibration <i style="color:#666;">(right)</i> across in-distribution and out-of-distribution data.
+    </h2>
     </div>
   </div>
 </section>
@@ -297,7 +297,11 @@
 </section>
 
     <!-- ================= ABLATION STUDIES ================= -->
-    <h3 class="title is-4 mt-6">Ablation Studies</h3>
+    <!-- ================= ABLATION STUDIES ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <h3 class="title is-4 has-text-centered">Ablation Studies</h3>
 
     <div class="content has-text-justified">
       <p>
@@ -309,6 +313,7 @@
 
     <!-- ===== Table 3: Key component ablations ===== -->
     <h4 class="title is-5 mt-5">Effectiveness of Key Design Components</h4>
+
     <div class="table-container">
       <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
         <thead>
@@ -319,6 +324,7 @@
             <th>HM DSC (%)</th>
           </tr>
         </thead>
+
         <tbody>
 
           <tr class="is-success-light">
@@ -397,7 +403,7 @@
           </tr>
 
           <tr>
-            <td>w/o LSoftCon</td>
+            <td>w/o SoftCon Loss</td>
             <td>87.24 (−1.87)<span class="red-arrow">↓</span></td>
             <td>77.08 (−1.94)<span class="red-arrow">↓</span></td>
             <td>81.84 (−1.92)<span class="red-arrow">↓</span></td>
@@ -411,7 +417,7 @@
           </tr>
 
           <tr>
-            <td>Attention-pooled LSoftCon</td>
+            <td>Attention-pooled SoftCon Loss</td>
             <td>88.73 (−0.38)<span class="red-arrow">↓</span></td>
             <td>75.60 (−3.42)<span class="red-arrow">↓</span></td>
             <td>81.64 (−2.12)<span class="red-arrow">↓</span></td>
@@ -421,23 +427,29 @@
       </table>
     </div>
 
-    <!-- ===== Figure 5: Layer interventions + beta ===== -->
+
+    <!-- ===== Figure 5 ===== -->
     <h4 class="title is-5 mt-5">Layer-wise PVL Intervention and Confidence Weight (&beta;)</h4>
+
     <div class="paper-figure">
       <figure class="image">
-        <!-- Add the exported Figure 5 image here -->
-        <img src="./static/images/layers_beta_plot.png" alt="Layer-wise interventions and confidence weight (beta) ablations" />
+        <img src="./static/images/layers_beta_plot.png"
+             alt="Layer-wise interventions and confidence weight (beta) ablations">
       </figure>
+
       <p class="has-text-centered is-size-7 mt-2">
         Layer-wise PVL adapter interventions and confidence weight (&beta;) ablations averaged on ID and OOD data.
         Deeper interventions improve performance up to ~Layer 10, and &beta; = 2.35 yields the best harmonic mean.
       </p>
     </div>
 
-    <!-- ===== Table 4: Prompt design ===== -->
+
+    <!-- ===== Table 4 ===== -->
     <h4 class="title is-5 mt-6">Effect of Text Prompt Design</h4>
+
     <div class="table-container">
       <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
+
         <thead>
           <tr>
             <th>Text Prompt Style</th>
@@ -446,20 +458,31 @@
             <th>HM DSC (%)</th>
           </tr>
         </thead>
+
         <tbody>
           <tr><td>Contradictory</td><td>68.60</td><td>63.21</td><td>65.79</td></tr>
           <tr><td>Missing Location</td><td>86.98</td><td>77.75</td><td>82.11</td></tr>
           <tr><td>Overdescriptive</td><td>82.93</td><td>74.49</td><td>78.48</td></tr>
           <tr><td>Underdescriptive</td><td>66.91</td><td>49.38</td><td>56.82</td></tr>
-          <tr class="is-success-light"><td><b>Original</b></td><td><b>89.11</b></td><td><b>79.02</b></td><td><b>83.76</b></td></tr>
+
+          <tr class="is-success-light">
+            <td><b>Original</b></td>
+            <td><b>89.11</b></td>
+            <td><b>79.02</b></td>
+            <td><b>83.76</b></td>
+          </tr>
         </tbody>
+
       </table>
     </div>
 
-    <!-- ===== Table 5: Backbone ===== -->
+
+    <!-- ===== Table 5 ===== -->
     <h4 class="title is-5 mt-6">Effect of Pre-trained Vision–Language Models</h4>
+
     <div class="table-container">
       <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
+
         <thead>
           <tr>
             <th>Pre-trained Model</th>
@@ -468,14 +491,25 @@
             <th>HM DSC (%)</th>
           </tr>
         </thead>
+
         <tbody>
           <tr><td>CLIP</td><td>88.48</td><td>74.81</td><td>81.07</td></tr>
           <tr><td>PubMedCLIP</td><td>86.67</td><td>73.05</td><td>79.28</td></tr>
           <tr><td>BiomedCLIP</td><td>88.70</td><td>77.08</td><td>82.48</td></tr>
-          <tr class="is-success-light"><td><b>UniMedCLIP</b></td><td><b>89.11</b></td><td><b>79.02</b></td><td><b>83.76</b></td></tr>
+
+          <tr class="is-success-light">
+            <td><b>UniMedCLIP</b></td>
+            <td><b>89.11</b></td>
+            <td><b>79.02</b></td>
+            <td><b>83.76</b></td>
+          </tr>
         </tbody>
+
       </table>
     </div>
+
+  </div>
+</section>
 
 <!-- ================= BIBTEX ================= -->
 <section class="section" id="BibTeX">
