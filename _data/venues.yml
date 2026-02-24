@@ -1,6 +1,35 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+ICML:
+  url: https://icml.cc/
+  color: "#d97706"
 
-"PhysRev":
-  url: https://journals.aps.org/
+ICLR:
+  url: https://iclr.cc/
+  color: "#2563eb"
+
+ICCV:
+  url: https://iccv.thecvf.com/
+  color: "#7c3aed"
+
+MICCAI:
+  url: https://miccai.org/
+  color: "#0f766e"
+
+AAAI:
+  url: https://aaai.org/conference/aaai/
+  color: "#dc2626"
+
+MedIA:
+  url: https://www.sciencedirect.com/journal/medical-image-analysis
+  color: "#059669"
+
+IEEE TUFFC:
+  url: https://ieee-uffc.org/publication/t-uffc
+  color: "#0ea5e9"
+
+IEEE TMI:
+  url: https://ieeetmi.org/
+  color: "#111827"
+
+Preprint:
+  url: https://arxiv.org/
+  color: "#6b7280"
