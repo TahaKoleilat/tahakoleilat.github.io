@@ -6,11 +6,13 @@
   booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
   year={2026},
   selected={true},
+  abbr={CVPR},
   pdf       = {https://arxiv.org/abs/2411.15232},
   code      = {https://github.com/HealthX-Lab/MedCLIPSeg},
   bibtex_show = {true},
   website   = {https://tahakoleilat.github.io/MedCLIPSeg/},
-  preview   = {medclipseg_overview.png}
+  preview   = {medclipseg_overview.png},
+  abstract={Medical image segmentation remains challenging due to limited annotations for training, ambiguous anatomical features, and domain shifts. While vision-language models such as CLIP offer strong cross-modal representations, their potential for dense, text-guided medical image segmentation remains underexplored. We present MedCLIPSeg, a novel framework that adapts CLIP for robust, data-efficient, and uncertainty-aware medical image segmentation. Our approach leverages patch-level CLIP embeddings through probabilistic cross-modal attention, enabling bidirectional interaction between image and text tokens and explicit modeling of predictive uncertainty. Together with a soft patch-level contrastive loss that encourages more nuanced semantic learning across diverse textual prompts, MedCLIPSeg effectively improves data efficiency and domain generalizability. Extensive experiments across 16 datasets spanning five imaging modalities and six organs demonstrate that MedCLIPSeg outperforms prior methods in accuracy, efficiency, and robustness, while providing interpretable uncertainty maps that highlight local reliability of segmentation results. This work demonstrates the potential of probabilistic vision-language modeling for text-driven medical image segmentation.}
 }
 
 @inproceedings{koleilat2025biomedcoop,
@@ -18,13 +20,15 @@
   author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
   booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
   pages={14766--14776},
+  abbr={CVPR},
   year={2025},
   selected={true},
   pdf       = {https://arxiv.org/abs/2411.15232},
   code      = {https://github.com/HealthX-Lab/BiomedCoOp},
   bibtex_show = {true},
   website   = {https://tahakoleilat.github.io/BiomedCoOp/},
-  preview   = {biomedcoop_overview.png}
+  preview   = {biomedcoop_overview.png},
+  abstract={Recent advancements in vision-language models (VLMs), such as CLIP, have demonstrated substantial success in self-supervised representation learning for vision tasks. However, effectively adapting VLMs to downstream applications remains challenging, as their accuracy often depends on time-intensive and expertise-demanding prompt engineering, while full model fine-tuning is costly. This is particularly true for biomedical images, which, unlike natural images, typically suffer from limited annotated datasets, unintuitive image contrasts, and nuanced visual features. Recent prompt learning techniques, such as Context Optimization (CoOp) intend to tackle these issues, but still fall short in generalizability. Meanwhile, explorations in prompt learning for biomedical image analysis are still highly limited. In this work, we propose BiomedCoOp, a novel prompt learning framework that enables efficient adaptation of BiomedCLIP for accurate and highly generalizable few-shot biomedical image classification. Our approach achieves effective prompt context learning by leveraging semantic consistency with average prompt ensembles from Large Language Models (LLMs) and knowledge distillation with a statistics-based prompt selection strategy. We conducted comprehensive validation of our proposed framework on 11 medical datasets across 9 modalities and 10 organs against existing state-of-the-art methods, demonstrating significant improvements in both accuracy and generalizability.}
 }
 
 @article{koleilat2025medclip,
@@ -33,13 +37,23 @@
   journal={Medical Image Analysis},
   pages={103749},
   year={2025},
+  abbr={MedIA},
   publisher={Elsevier},
   selected={true},
   pdf       = {https://arxiv.org/abs/2409.19483},
   code      = {https://github.com/HealthX-Lab/MedCLIP-SAMv2},
   bibtex_show = {true},
   website   = {https://tahakoleilat.github.io/MedCLIP-SAMv2/},
-  preview   = {medclipsamv2_overview.png}
+  preview   = {medclipsamv2_overview.png},
+  abstract={Segmentation of anatomical structures and pathologies in medical images is essential for modern disease
+        diagnosis, clinical research, and treatment planning. While significant advancements have been made in deep
+        learning-based segmentation techniques, many of these methods still suffer from limitations in data efficiency,
+        generalizability, and interactivity. Recently, foundation models like CLIP and Segment-Anything-Model (SAM)
+        have paved the way for interactive and universal image segmentation. In this work, we introduce
+        <b>MedCLIP-SAMv2</b>, a framework that integrates <b>BiomedCLIP</b> and <b>SAM</b> to perform
+        <b>text-driven medical image segmentation</b> in <b>zero-shot</b> and <b>weakly supervised</b> settings.
+        The approach fine-tunes BiomedCLIP with a new <b>DHN-NCE</b> loss and leverages <b>M2IB</b> to create
+        visual prompts for SAM; we also explore uncertainty-aware refinement via checkpoint ensembling.}
 }
 
 @inproceedings{koleilat2024medclip,
@@ -48,13 +62,28 @@
   booktitle={International conference on medical image computing and computer-assisted intervention},
   pages={643--653},
   year={2024},
+  abbr={MICCAI},
   organization={Springer},
   selected={true},
   pdf       = {https://arxiv.org/abs/2403.20253},
   code      = {https://github.com/HealthX-Lab/MedCLIP-SAM},
   bibtex_show = {true},
   website   = {https://tahakoleilat.github.io/MedCLIP-SAM/},
-  preview   = {medclipsam_framework.jpg}
+  preview   = {medclipsam_framework.jpg},
+  abstract={Medical image segmentation of anatomical structures and pathology is
+        crucial in modern clinical diagnosis, disease study, and treatment
+        planning. While deep learning-based methods have achieved strong
+        performance, they often lack data efficiency, generalizability, and
+        interactability. In this work, we propose <b>MedCLIP-SAM</b>, a novel
+        framework that bridges vision–language models and segmentation
+        foundation models to enable <b>text-driven universal medical image
+        segmentation</b>. MedCLIP-SAM integrates BiomedCLIP fine-tuned with a
+        <b>Decoupled Hard Negative Noise Contrastive Estimation (DHN-NCE)</b>
+        loss, <b>gScoreCAM</b>-based saliency generation, CRF post-processing,
+        and <b>Segment Anything Model (SAM)</b> refinement. The framework
+        supports both <b>zero-shot</b> and <b>weakly supervised</b> segmentation
+        and is validated across breast ultrasound, brain MRI, and chest X-ray
+        datasets, demonstrating strong accuracy and generalization.}
 }
 
 
@@ -65,10 +94,12 @@
   pages={948--957},
   year={2025},
   selected={true},
+  abbr={ICCV CVAMD},
   pdf       = {https://arxiv.org/abs/2507.18082},
   code      = {https://github.com/HealthX-Lab/TextSAM-EUS},
   bibtex_show = {true},
-  preview   = {textsam_eus.png}
+  preview   = {textsam_eus.png},
+  abstract={Pancreatic cancer carries a poor prognosis and relies on endoscopic ultrasound (EUS) for targeted biopsy and radiotherapy. However, the speckle noise, low contrast, and unintuitive appearance of EUS make segmentation of pancreatic tumors with fully supervised deep learning (DL) models both error-prone and dependent on large, expert-curated annotation datasets. To address these challenges, we present TextSAM-EUS, a novel, lightweight, text-driven adaptation of the Segment Anything Model (SAM) that requires no manual geometric prompts at inference. Our approach leverages text prompt learning (context optimization) through the BiomedCLIP text encoder in conjunction with a LoRA-based adaptation of SAM’s architecture to enable automatic pancreatic tumor segmentation in EUS, tuning only 0.86% of the total parameters. On the public Endoscopic Ultrasound Database of the Pancreas, TextSAM-EUS with automatic prompts attains 82.69% Dice and 85.28% normalized surface distance (NSD), and with manual geometric prompts reaches 83.10% Dice and 85.70% NSD, outperforming both state-of-the-art (SOTA) supervised DL models and foundation models (e.g., SAM and its variants). As the first attempt to incorporate prompt learning in SAM-based medical image segmentation, TextSAM-EUS offers a practical option for efficient and robust automatic EUS segmentation.}
 }
 
 @article{koleilat2025singular,
@@ -76,16 +107,39 @@
   author={Koleilat, Taha and Rivaz, Hassan and Xiao, Yiming},
   journal={arXiv preprint arXiv:2509.03740},
   year={2025},
+  abbr={arXiv},
   pdf       = {https://arxiv.org/abs/2509.03740},
   code      = {https://github.com/HealthX-Lab/CLIP-SVD},
   bibtex_show = {true},
   website   = {https://tahakoleilat.github.io/CLIP-SVD/},
-  preview   = {CLIP-SVD.png}
+  preview   = {CLIP-SVD.png},
+  selected={true},
+  abstract={Vision-language models (VLMs) like CLIP have shown impressive zero-shot and
+    few-shot learning capabilities across diverse applications. However, adapting
+    these models to new fine-grained domains remains difficult due to reliance on
+    prompt engineering and the high cost of full model fine-tuning. Existing
+    adaptation approaches rely on augmented components, such as prompt tokens and
+    adapter modules, which could limit adaptation quality, destabilize the model,
+    and compromise the rich knowledge learned during pretraining. In this work, we
+    present <strong>CLIP-SVD</strong>, a novel <em>multi-modal</em> and
+    <em>parameter-efficient</em> adaptation technique that leverages Singular Value
+    Decomposition (SVD) to modify the internal parameter space of CLIP without
+    injecting additional modules. Specifically, we fine-tune only the singular
+    values of the CLIP parameter matrices to rescale the basis vectors for domain
+    adaptation while retaining the pretrained model. This design enables enhanced
+    adaptation performance using only <strong>0.04%</strong> of the model's total
+    parameters and better preservation of its generalization ability. CLIP-SVD
+    achieves state-of-the-art classification results on 11 natural and 10 biomedical
+    datasets, outperforming previous methods in both accuracy and generalization
+    under few-shot settings. Additionally, we leverage a natural language-based
+    approach to analyze the effectiveness and dynamics of the CLIP adaptation to
+    enable interpretability of <strong>CLIP-SVD</strong>.}
 }
 
 @article{NEJATIMANZARI2026114045,
 title = {Medical image classification with KAN-integrated transformers and dilated neighborhood attention},
 journal = {Applied Soft Computing},
+abbr={ASOC},
 volume = {186},
 pages = {114045},
 year = {2026},
@@ -107,6 +161,7 @@ preview   = {medvitv2.png}
   volume={72},
   number={10},
   pages={1414-1425},
+  abbr={IEEE TUFFC},
   keywords={Ultrasonic imaging;Image segmentation;Breast;Grounding;Training;Imaging;Adaptation models;Acoustics;Thyroid;Liver;Grounding DINO;prompt-driven segmentation;segment anything model (SAM) SAM2;ultrasound image segmentation;vision–language models (VLMs)},
   doi={10.1109/TUFFC.2025.3605285},
   pdf       = {https://arxiv.org/abs/2506.23903},
