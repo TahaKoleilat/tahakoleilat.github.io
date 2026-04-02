@@ -70,13 +70,27 @@ body {
   .publication-authors {
   }
   
-  .publication-authors a {
+  /* .publication-authors a {
      color: hsl(204, 86%, 53%) !important;
-  }
+  } */
   
   .publication-authors a:hover {
       text-decoration: underline;
   }
+
+  .author-link {
+  color: black;              /* force black text */
+  text-decoration: none;     /* remove underline */
+}
+
+.author-link:visited {
+  color: black;              /* prevent purple after click */
+}
+
+.author-link:hover {
+  color: black;              /* stay black on hover */
+  text-decoration: underline; /* optional hover effect */
+}
   
   .author-block {
     display: inline-block;
@@ -155,3 +169,12 @@ body {
   #interpolation-image-wrapper img {
     border-radius: 5px;
   }
+
+.buttons .button {
+  transition: all 0.2s ease;
+}
+
+.buttons .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}

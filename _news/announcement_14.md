@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Two papers <a href="https://tahakoleilat.github.io/MedCLIPSeg/"><b>MedCLIPSeg</b></a> and <a href=""><b>MedQwen</b></a> were accepted to **CVPR 2026**, see you in **Denver, Colorado**!
+Two papers <a href="https://tahakoleilat.github.io/MedCLIPSeg/"><b>MedCLIPSeg</b></a> and <a href="https://omid-nejati.github.io/MedQwen/"><b>MedQwen</b></a> were accepted to **CVPR 2026**, see you in **Denver, Colorado**!
