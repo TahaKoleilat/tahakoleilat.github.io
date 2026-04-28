@@ -102,12 +102,13 @@
   abstract={Pancreatic cancer carries a poor prognosis and relies on endoscopic ultrasound (EUS) for targeted biopsy and radiotherapy. However, the speckle noise, low contrast, and unintuitive appearance of EUS make segmentation of pancreatic tumors with fully supervised deep learning (DL) models both error-prone and dependent on large, expert-curated annotation datasets. To address these challenges, we present TextSAM-EUS, a novel, lightweight, text-driven adaptation of the Segment Anything Model (SAM) that requires no manual geometric prompts at inference. Our approach leverages text prompt learning (context optimization) through the BiomedCLIP text encoder in conjunction with a LoRA-based adaptation of SAM’s architecture to enable automatic pancreatic tumor segmentation in EUS, tuning only 0.86% of the total parameters. On the public Endoscopic Ultrasound Database of the Pancreas, TextSAM-EUS with automatic prompts attains 82.69% Dice and 85.28% normalized surface distance (NSD), and with manual geometric prompts reaches 83.10% Dice and 85.70% NSD, outperforming both state-of-the-art (SOTA) supervised DL models and foundation models (e.g., SAM and its variants). As the first attempt to incorporate prompt learning in SAM-based medical image segmentation, TextSAM-EUS offers a practical option for efficient and robust automatic EUS segmentation.}
 }
 
-@article{koleilat2025singular,
-  title={Singular Value Few-shot Adaptation of Vision-Language Models},
-  author={Koleilat, Taha and Rivaz, Hassan and Xiao, Yiming},
-  journal={arXiv preprint arXiv:2509.03740},
-  year={2025},
-  abbr={arXiv},
+@article{koleilat2026clipsvd,
+  title={{CLIP}-{SVD}: Efficient and Interpretable Vision{\textendash}Language Adaptation via Singular Values},
+  author={Taha Koleilat and Hassan Rivaz and Yiming Xiao},
+  journal={Transactions on Machine Learning Research},
+  year={2026},
+  issn={2835-8856},
+  abbr={TMLR},
   pdf       = {https://arxiv.org/abs/2509.03740},
   code      = {https://github.com/HealthX-Lab/CLIP-SVD},
   bibtex_show = {true},
@@ -121,19 +122,22 @@
     adaptation approaches rely on augmented components, such as prompt tokens and
     adapter modules, which could limit adaptation quality, destabilize the model,
     and compromise the rich knowledge learned during pretraining. In this work, we
-    present <strong>CLIP-SVD</strong>, a novel <em>multi-modal</em> and
-    <em>parameter-efficient</em> adaptation technique that leverages Singular Value
-    Decomposition (SVD) to modify the internal parameter space of CLIP without
-    injecting additional modules. Specifically, we fine-tune only the singular
-    values of the CLIP parameter matrices to rescale the basis vectors for domain
-    adaptation while retaining the pretrained model. This design enables enhanced
-    adaptation performance using only <strong>0.04%</strong> of the model's total
-    parameters and better preservation of its generalization ability. CLIP-SVD
-    achieves state-of-the-art classification results on 11 natural and 10 biomedical
-    datasets, outperforming previous methods in both accuracy and generalization
-    under few-shot settings. Additionally, we leverage a natural language-based
-    approach to analyze the effectiveness and dynamics of the CLIP adaptation to
-    enable interpretability of <strong>CLIP-SVD</strong>.}
+    present <strong>CLIP-SVD</strong>, a <em>multi-modal</em> and
+    <em>parameter-efficient</em> adaptation framework that applies Singular Value
+    Fine-tuning (SVF) to CLIP, leveraging Singular Value Decomposition (SVD) to
+    modify the internal parameter space of CLIP without injecting additional modules.
+    Specifically, we fine-tune only the singular values of the CLIP parameter
+    matrices to rescale the basis vectors for domain adaptation while retaining the
+    pretrained model. This design enables enhanced adaptation performance using only
+    <strong>0.04%</strong> of the model's total parameters and better preservation
+    of its generalization ability. CLIP-SVD achieves state-of-the-art classification
+    results on 11 natural and 10 biomedical datasets, outperforming previous methods
+    in both accuracy and generalization under few-shot settings. Additionally, we
+    leverage a natural language-based approach to analyze the effectiveness and
+    dynamics of the CLIP adaptation to allow interpretability of
+    <strong>CLIP-SVD</strong>. Overall, this work provides the first extensive
+    empirical evaluation of SVD-based finetuning in the vision-language model
+    setting.}
 }
 
 @article{NEJATIMANZARI2026114045,
