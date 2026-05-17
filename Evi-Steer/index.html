@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Evi-Steer: Learning to Steer Biomedical Vision-Language Models through Efficient and Generalizable Evidential Tuning" />
+  <meta name="keywords" content="Evi-Steer, BiomedCLIP, Vision-Language Models, Biomedical AI, Evidential Tuning, Parameter-Efficient Fine-Tuning, Few-Shot Learning, Domain Generalization, Dempster-Shafer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evi-Steer</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
+  <link rel="stylesheet" href="./static/css/bulma.min.css" />
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link rel="stylesheet" href="./static/css/index.css" />
+  <link rel="icon" href="./static/images/favicon.svg" />
+
+  <style>
+    .stat-card {
+      border: 1px solid #eee;
+      border-radius: 14px;
+      padding: 1.25rem;
+      height: 100%;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(10, 10, 10, 0.04);
+    }
+    .stat-card .stat-value {
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    .stat-card .stat-label {
+      margin-top: 0.25rem;
+      color: #666;
+      font-size: 0.95rem;
+    }
+    .tight-table td,
+    .tight-table th {
+      font-size: 0.9rem;
+      padding: 0.45rem 0.6rem;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .tight-table td:first-child,
+    .tight-table th:first-child {
+      text-align: left;
+      white-space: nowrap;
+    }
+    .tight-table th.group-header {
+      text-align: center !important;
+      vertical-align: middle !important;
+    }
+    .is-evisteer-light {
+      background-color: #effaf5 !important;
+    }
+    .paper-figure img {
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(10, 10, 10, 0.08);
+    }
+    .conference-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #dbdbdb;
+      border-radius: 999px;
+      padding: 0.5rem 1rem;
+      background: #fff;
+      font-weight: 600;
+      color: #363636;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+      <h1 class="title is-1 publication-title">
+        Evi-Steer: Learning to Steer Biomedical Vision-Language Models through Efficient and Generalizable Evidential Tuning
+      </h1>
+
+      <div class="is-size-5 publication-authors">
+        <a href="https://tahakoleilat.github.io/" class="author-link" target="_blank" rel="noreferrer">Taha Koleilat</a> ·
+        <a href="https://users.encs.concordia.ca/~hrivaz/" class="author-link" target="_blank" rel="noreferrer">Hassan Rivaz</a> ·
+        <a href="https://yimingxiao.weebly.com/curriculum-vitae.html" class="author-link" target="_blank" rel="noreferrer">Yiming Xiao</a>
+      </div>
+
+      <div class="is-size-6 publication-authors">
+        <a href="https://users.encs.concordia.ca/~impact/" target="_blank" rel="noreferrer">IMPACT Lab</a>
+        &nbsp;·&nbsp;
+        <a href="http://www.healthx-lab.ca/" target="_blank" rel="noreferrer">Health-X Lab</a>
+      </div>
+
+      <div class="buttons is-centered mt-4">
+        <a class="button is-dark is-rounded" href="https://arxiv.org/abs/2602.20423" target="_blank" rel="noreferrer">
+          <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span>
+        </a>
+
+        <a class="button is-dark is-rounded" href="https://github.com/HealthX-Lab/Evi-Steer" target="_blank" rel="noreferrer">
+          <span class="icon">
+            <img src="./static/icons/github.webp" alt="GitHub" style="height:18px;" />
+          </span>
+          <span>Code</span>
+        </a>
+
+        <a class="button is-dark is-rounded" href="https://huggingface.co/TahaKoleilat/Evi-Steer" target="_blank" rel="noreferrer">
+          <span class="icon">
+            <img src="./static/icons/models.png" alt="Models" style="height:18px;" />
+          </span>
+          <span>Models</span>
+        </a>
+
+        <a class="button is-dark is-rounded" href="https://huggingface.co/datasets/TahaKoleilat/BiomedCoOp" target="_blank" rel="noreferrer">
+          <span class="icon">
+            <img src="./static/icons/datasets.png" alt="Datasets" style="height:18px;" />
+          </span>
+          <span>Datasets</span>
+        </a>
+
+        <a class="button is-dark is-rounded" href="#BibTeX">
+          <span class="icon">
+            <img src="./static/icons/bibtex.png" alt="BibTeX" style="height:18px;" />
+          </span>
+          <span>BibTeX</span>
+        </a>
+      </div>
+
+      <p class="title is-6 has-text-centered mt-4 mb-2">
+        MICCAI 2026 Early Accept
+      </p>
+      <p class="is-size-6 has-text-grey mt-2" style="text-align: center;">
+        <a href="https://miccai.org/" target="_blank" rel="noreferrer">
+          <img src="./static/images/miccai_2026.png" alt="MICCAI 2026" style="height: 80px;">
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TEASER ================= -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/overview.png" onerror="this.onerror=null;this.src='./assets/overview.png';" class="teaser-image" alt="Evi-Steer overview figure" />
+      <h2 class="subtitle has-text-centered">
+        Evidential cross-modal low-dimensional steering for BiomedCLIP, enabling uncertainty-aware parameter-efficient adaptation with conservative, confidence-weighted updates under few-shot learning and domain shift.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABSTRACT ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Abstract</h2>
+    <div class="content has-text-justified">
+      <p>
+        Parameter-efficient adaptation of biomedical vision-language foundation models is essential for robust multimodal understanding in low-data and shifted clinical settings. Existing adaptation methods are often deterministic and can apply residual updates even when image-text evidence is ambiguous or unreliable. We present <b>Evi-Steer</b>, an <b>evidential cross-modal low-dimensional steering</b> framework for <b>BiomedCLIP</b> that enables uncertainty-aware fine-tuning while updating only <b>0.11%</b> of the total model parameters. Evi-Steer performs lightweight token updates in both the vision and text encoders, estimates latent-dimension epistemic uncertainty, and uses these estimates to conservatively gate residual steering. It further introduces <b>Dempster-Shafer cross-modal confidence fusion</b>, conditioning visual adaptation on textual confidence to suppress conflicting or uncertain updates. Across <b>15 biomedical imaging datasets</b> spanning <b>8 organs</b> and <b>8 imaging modalities</b>, Evi-Steer improves few-shot learning and domain generalization, providing a practical pathway for reliable biomedical VLM adaptation.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= METHOD ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Method</h2>
+
+    <div class="content has-text-justified">
+      <ul>
+        <li><b>Evidential Low-Dimensional Representation Steering:</b> Evi-Steer projects text and vision activations into a compact latent space, computes lightweight token updates, and estimates latent-dimension epistemic uncertainty in a single forward pass.</li>
+        <li><b>Confidence-Weighted Residual Updates:</b> Evidence-derived uncertainty is converted into confidence weights, allowing the model to steer strongly when evidence is reliable and adapt conservatively when evidence is weak.</li>
+        <li><b>Cross-Modal Reliability Fusion:</b> A Dempster-Shafer belief fusion mechanism conditions vision-side updates on textual confidence, suppressing ambiguous or conflicting image-text updates under domain shift.</li>
+        <li><b>Frozen BiomedCLIP Backbone:</b> The core BiomedCLIP vision and text encoders remain frozen, preserving pretrained representations while training a small set of steering modules.</li>
+      </ul>
+    </div>
+
+    <div class="paper-figure mt-5">
+      <figure class="image">
+        <img src="./static/images/Evi-Steer.png" onerror="this.onerror=null;this.src='./assets/Evi-Steer.png';" alt="Overall architecture of Evi-Steer" />
+      </figure>
+      <p class="has-text-centered is-size-7 mt-2">
+        Overall Evi-Steer pipeline: evidential cross-modal low-dimensional adapters generate confidence-weighted representation updates for the text and vision encoders.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESULTS ================= -->
+<section class="section is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Results</h2>
+
+    <div class="content has-text-justified">
+      <p>
+        Evi-Steer is evaluated in two clinically relevant settings: <b>few-shot adaptation</b> with K = 4, 8, and 16 labeled samples per class, and <b>domain generalization</b>, where models are trained with 16 shots on source datasets and tested on unseen target datasets without additional adaptation. Results below report average accuracy over three seeds.
+      </p>
+    </div>
+
+    <!-- ===== Few-shot Evaluation ===== -->
+    <h3 class="title is-4">Few-Shot Evaluation</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>K=4</th>
+            <th>K=8</th>
+            <th>K=16</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Zero-shot BiomedCLIP</td><td>–</td><td>43.81</td><td>–</td></tr>
+          <tr><td>CoOp</td><td>65.52</td><td>72.36</td><td>76.26</td></tr>
+          <tr><td>CoCoOp</td><td>60.63</td><td>67.75</td><td>72.25</td></tr>
+          <tr><td>KgCoOp</td><td>65.19</td><td>70.74</td><td>72.48</td></tr>
+          <tr><td>ProGrad</td><td>66.33</td><td>71.76</td><td>73.98</td></tr>
+          <tr><td>BiomedCoOp</td><td><u>67.50</u></td><td>72.43</td><td>77.15</td></tr>
+          <tr><td>LP++</td><td>65.51</td><td>70.85</td><td>75.42</td></tr>
+          <tr><td>CLIP-Adapter</td><td>47.11</td><td>48.51</td><td>50.60</td></tr>
+          <tr><td>Tip-Adapter-F</td><td>66.22</td><td>72.73</td><td><u>77.60</u></td></tr>
+          <tr><td>GDA</td><td>67.34</td><td><u>74.92</u></td><td>77.23</td></tr>
+          <tr><td>CLIP-LoRA</td><td>65.93</td><td>72.47</td><td>74.75</td></tr>
+          <tr class="is-evisteer-light">
+            <td><b>Evi-Steer (Ours)</b></td>
+            <td><b>71.43</b></td>
+            <td><b>77.33</b></td>
+            <td><b>81.18</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Domain Generalization ===== -->
+    <h3 class="title is-4 mt-6">Domain Generalization</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>ID</th>
+            <th>OOD</th>
+            <th>HM</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Zero-shot BiomedCLIP</td><td>58.27</td><td>60.65</td><td>59.44</td></tr>
+          <tr><td>CoOp</td><td>75.93</td><td>73.46</td><td>74.67</td></tr>
+          <tr><td>CoCoOp</td><td>74.33</td><td>71.32</td><td>72.79</td></tr>
+          <tr><td>ProGrad</td><td><u>77.05</u></td><td>73.36</td><td>75.16</td></tr>
+          <tr><td>KgCoOp</td><td>75.85</td><td><u>75.03</u></td><td><u>75.44</u></td></tr>
+          <tr><td>GDA</td><td>74.36</td><td>70.72</td><td>72.49</td></tr>
+          <tr><td>CLIP-LoRA</td><td>75.81</td><td>71.69</td><td>73.69</td></tr>
+          <tr><td>BiomedCoOp</td><td><u>76.82</u></td><td>72.30</td><td>74.49</td></tr>
+          <tr class="is-evisteer-light">
+            <td><b>Evi-Steer (Ours)</b></td>
+            <td><b>79.78</b></td>
+            <td><b>77.95</b></td>
+            <td><b>78.85</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ===== Detailed OOD Transfer ===== -->
+    <h3 class="title is-4 mt-6">Detailed OOD Transfer</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
+        <thead>
+          <tr>
+            <th rowspan="2">Method</th>
+            <th colspan="4" class="group-header">Breast Ultrasound</th>
+            <th colspan="4" class="group-header">Brain MRI</th>
+          </tr>
+          <tr>
+            <th>BUSI</th><th>BUID</th><th>BUSBRA</th><th>UDIAT</th>
+            <th>BTMRI</th><th>BTMRI-P</th><th>BTMRI-S</th><th>BRISC</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>BiomedCLIP</td><td>59.75</td><td>75.00</td><td>66.78</td><td>61.54</td><td>56.79</td><td>52.80</td><td>55.20</td><td>52.60</td></tr>
+          <tr><td>CoOp</td><td>69.49</td><td>72.22</td><td>68.28</td><td>70.49</td><td>82.37</td><td>76.77</td><td>78.13</td><td>74.87</td></tr>
+          <tr><td>CoCoOp</td><td>70.20</td><td>67.59</td><td>66.55</td><td>71.54</td><td>78.45</td><td>75.43</td><td>76.62</td><td>70.20</td></tr>
+          <tr><td>ProGrad</td><td>71.47</td><td>69.44</td><td>67.25</td><td>69.23</td><td>82.63</td><td>78.00</td><td>79.96</td><td>76.27</td></tr>
+          <tr><td>KgCoOp</td><td>70.62</td><td>77.78</td><td>68.79</td><td>75.64</td><td>81.07</td><td>75.60</td><td>79.02</td><td>73.37</td></tr>
+          <tr><td>GDA</td><td>66.81</td><td>63.89</td><td>63.02</td><td>67.95</td><td>81.91</td><td>77.47</td><td>76.75</td><td>75.23</td></tr>
+          <tr><td>CLIP-LoRA</td><td>71.42</td><td>65.85</td><td>65.37</td><td>69.82</td><td>80.19</td><td>77.90</td><td>77.68</td><td>73.50</td></tr>
+          <tr><td>BiomedCoOp</td><td>70.34</td><td>67.59</td><td>62.90</td><td>71.67</td><td>83.30</td><td>77.60</td><td>79.52</td><td>74.50</td></tr>
+          <tr class="is-evisteer-light">
+            <td><b>Evi-Steer (Ours)</b></td>
+            <td><b>73.16</b></td><td><b>78.70</b></td><td><b>71.61</b></td><td><b>78.21</b></td>
+            <td><b>86.39</b></td><td><b>80.23</b></td><td><b>80.53</b></td><td><b>78.43</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABLATION STUDIES ================= -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Ablation Studies</h2>
+
+    <div class="content has-text-justified">
+      <p>
+        Ablations show that visual adaptation, textual adaptation, evidential updates, and cross-modal belief fusion all contribute to the final domain-generalization performance, with visual adaptation producing the largest OOD gain.
+      </p>
+    </div>
+
+    <h3 class="title is-4">Effectiveness of Key Components</h3>
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>ID Acc. (%)</th>
+            <th>OOD Acc. (%)</th>
+            <th>HM Acc. (%)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="is-evisteer-light">
+            <td><b>Evi-Steer (Ours)</b></td>
+            <td><b>79.79</b></td>
+            <td><b>77.97</b></td>
+            <td><b>78.87</b></td>
+          </tr>
+          <tr><td>w/o Visual Adaptation</td><td>76.23 (−3.56)</td><td>72.25 (−5.72)</td><td>74.19 (−4.68)</td></tr>
+          <tr><td>w/o Textual Adaptation</td><td>78.40 (−1.39)</td><td>76.97 (−1.00)</td><td>77.68 (−1.19)</td></tr>
+          <tr><td>w/o Evidential Update</td><td>79.25 (−0.54)</td><td>76.34 (−1.63)</td><td>77.77 (−1.10)</td></tr>
+          <tr><td>w/o Cross-modal Belief</td><td>79.52 (−0.27)</td><td>76.90 (−1.07)</td><td>78.19 (−0.68)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content has-text-justified mt-5">
+      <p>
+        The layer-depth and adapter-dimension analyses further suggest that distributing lightweight adapters across more layers improves generalization, while a compact latent dimension of <b>r = 4</b> provides the best harmonic-mean accuracy by balancing adaptation capacity and overfitting.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BIBTEX ================= -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">BibTeX</h2>
+<pre><code>@inproceedings{koleilat2026evisteer,
+  title={Evi-Steer: Learning to Steer Biomedical Vision-Language Models through Efficient and Generalizable Evidential Tuning},
+  author={Koleilat, Taha and Rivaz, Hassan and Xiao, Yiming},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  year={2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      Website adapted from <a href="https://nerfies.github.io" target="_blank" rel="noreferrer">Nerfies</a>.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

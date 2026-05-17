@@ -15,6 +15,21 @@
   abstract={Medical image segmentation remains challenging due to limited annotations for training, ambiguous anatomical features, and domain shifts. While vision-language models such as CLIP offer strong cross-modal representations, their potential for dense, text-guided medical image segmentation remains underexplored. We present MedCLIPSeg, a novel framework that adapts CLIP for robust, data-efficient, and uncertainty-aware medical image segmentation. Our approach leverages patch-level CLIP embeddings through probabilistic cross-modal attention, enabling bidirectional interaction between image and text tokens and explicit modeling of predictive uncertainty. Together with a soft patch-level contrastive loss that encourages more nuanced semantic learning across diverse textual prompts, MedCLIPSeg effectively improves data efficiency and domain generalizability. Extensive experiments across 16 datasets spanning five imaging modalities and six organs demonstrate that MedCLIPSeg outperforms prior methods in accuracy, efficiency, and robustness, while providing interpretable uncertainty maps that highlight local reliability of segmentation results. This work demonstrates the potential of probabilistic vision-language modeling for text-driven medical image segmentation.}
 }
 
+@inproceedings{koleilat2026evisteer,
+  title={Evi-Steer: Learning to Steer Biomedical Vision-Language Models through Efficient and Generalizable Evidential Tuning},
+  author={Koleilat, Taha and Rivaz, Hassan and Xiao, Yiming},
+  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
+  year={2026},
+  selected={true},
+  abbr={MICCAI},
+  pdf       = {https://arxiv.org/abs/2602.20423},
+  code      = {https://github.com/HealthX-Lab/Evi-Steer},
+  bibtex_show = {true},
+  website   = {https://tahakoleilat.github.io/Evi-Steer/},
+  preview   = {evisteer_overview.png},
+  abstract = {Parameter-efficient adaptation of vision--language foundation models is crucial for precise multimodal understanding of biomedical images, yet existing methods remain deterministic and often struggle under domain shift or ambiguous image-text alignment. This limitation is particularly critical in the clinic, where models should remain robust in low-data regimes and domain shifts. We present Evi-Steer, an evidential cross-modal low-dimensional steering framework for BiomedCLIP that enables uncertainty-aware parameter-efficient fine-tuning while updating only 0.11% of total model parameters. Our approach performs lightweight low-dimensional token updates in both vision and text encoders while simultaneously estimating epistemic uncertainty. These uncertainty estimates update gate residuals, allowing the model to adapt conservatively when evidence is weak. Furthermore, we introduce cross-modal confidence fusion based on Dempster-Shafer theory, enabling visual adaptation to be conditioned on textual confidence and suppressing conflicting or uncertain cross-modal updates. We conduct a comprehensive evaluation on 15 biomedical imaging datasets spanning 8 organs and 8 imaging modalities under few-shot learning and domain generalization settings. Evi-Steer consistently outperforms state-of-the-art methods under few-shot learning and domain shift settings, demonstrating a practical and robust pathway for deploying vision-language models in real-world clinical settings.}
+  }
+
 @inproceedings{koleilat2025biomedcoop,
   title={Biomedcoop: Learning to prompt for biomedical vision-language models},
   author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
