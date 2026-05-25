@@ -14,3 +14,12 @@ $max-content-width: {{ site.max_width }};
   "distill",
   "cv"
 ;
+
+// Make the highlighted/bolded author name appear bold instead of underlined
+.publications .author em,
+.publications .author em a {
+  font-style: normal !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}

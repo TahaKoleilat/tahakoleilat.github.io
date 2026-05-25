@@ -17,7 +17,7 @@ selected_papers: true
 social: true
 ---
 
-Hi, I am **Taha Koleilat**, a PhD candidate in **Electrical & Computer Engineering** at **Concordia University**, Montreal. I am a Graduate Research Assistant at the **IMPACT** and **Health-X Labs**, supervised by <a href="https://www.concordia.ca/ginacody/electrical-computer-engineering/faculty/hassan-rivaz.html">Prof. Hassan Rivaz</a> and <a href="https://www.concordia.ca/ginacody/computer-science-software-engineering/faculty/yiming-xiao.html">Prof. Yiming Xiao</a>. In **Summer 2026**, I will be joining **Amazon** as an **Applied Scientist Intern**.
+Hi, I am **Taha Koleilat**, a PhD candidate in **Electrical & Computer Engineering** at **Concordia University**, Montreal. I am a Graduate Research Assistant at the **IMPACT** and **Health-X Labs**, supervised by <a href="https://www.concordia.ca/ginacody/electrical-computer-engineering/faculty/hassan-rivaz.html">Prof. Hassan Rivaz</a> and <a href="https://www.concordia.ca/ginacody/computer-science-software-engineering/faculty/yiming-xiao.html">Prof. Yiming Xiao</a>. In **Summer 2026**, I will join **Amazon** as an **Applied Scientist Intern**, where I will work on applied machine learning and computer vision research.
 
 Previously, I received my **BEng in Computer & Communications Engineering** from the **American University of Beirut**, graduating with **High Distinction (4.0/4.0)** and a minor in **Economics**.
 
