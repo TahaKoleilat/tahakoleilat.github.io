@@ -1,10 +1,12 @@
 ---
 ---
 @inproceedings{koleilat2026medclipseg,
-  title={MedCLIPSeg: Probabilistic Vision–Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation},
-  author={Koleilat, Taha and Asgariandehkordi, Hojat and Nejati Manzari, Omid and Barile, Berardino and Xiao*, Yiming and Rivaz*, Hassan},
-  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
-  year={2026},
+  author    = {{\textbf{Koleilat, Taha}} and Asgariandehkordi, Hojat and Nejatimanzari, Omid and Barile, Berardino and Xiao, Yiming and Rivaz, Hassan},
+  title     = {MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2026},
+  pages     = {1406-1417},
   selected={true},
   abbr={CVPR},
   pdf       = {https://arxiv.org/abs/2602.20423},
@@ -15,9 +17,26 @@
   abstract={Medical image segmentation remains challenging due to limited annotations for training, ambiguous anatomical features, and domain shifts. While vision-language models such as CLIP offer strong cross-modal representations, their potential for dense, text-guided medical image segmentation remains underexplored. We present MedCLIPSeg, a novel framework that adapts CLIP for robust, data-efficient, and uncertainty-aware medical image segmentation. Our approach leverages patch-level CLIP embeddings through probabilistic cross-modal attention, enabling bidirectional interaction between image and text tokens and explicit modeling of predictive uncertainty. Together with a soft patch-level contrastive loss that encourages more nuanced semantic learning across diverse textual prompts, MedCLIPSeg effectively improves data efficiency and domain generalizability. Extensive experiments across 16 datasets spanning five imaging modalities and six organs demonstrate that MedCLIPSeg outperforms prior methods in accuracy, efficiency, and robustness, while providing interpretable uncertainty maps that highlight local reliability of segmentation results. This work demonstrates the potential of probabilistic vision-language modeling for text-driven medical image segmentation.}
 }
 
+@inproceedings{manzari2026sparse,
+  author    = {Nejatimanzari, Omid and Asgariandehkordi, Hojat and {\textbf{Koleilat, Taha}} and Xiao, Yiming and Rivaz, Hassan},
+  title     = {Sparse Spectral LoRA: Routed Experts for Medical VLMs},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2026},
+  pages     = {35351-35362},
+  selected={true},
+  abbr={CVPR},
+  pdf       = {https://arxiv.org/abs/2604.01310},
+  code      = {https://github.com/IMPACT-L/MedQwen},
+  bibtex_show = {true},
+  website   = {https://omid-nejati.github.io/MedQwen/},
+  preview   = {medqwen_overview.jpg},
+  abstract={Large vision-language models excel on general benchmarks but often lack robustness in medical imaging, where heterogeneous supervision induces cross-dataset interference and sensitivity to the training data regime. In realistic clinical workflows, data and tasks also arrive sequentially, making catastrophic forgetting a major challenge. MedQwen addresses these issues with a parameter-efficient medical VLM that combines a spectrally routed Mixture-of-Experts with a theoretically grounded scaling rule that aligns low-rank updates with a full-rank, fully fine-tuned MoE. Each expert is initialized from a distinct non-overlapping SVD segment of the pretrained weights, and a lightweight router activates only the most relevant experts for a given input. Across 23 medical datasets spanning VQA, report generation, radiology classification, and hallucination mitigation, MedQwen achieves strong performance while remaining efficient, approaching full fine-tuning on zero-shot classification with 339× fewer trainable parameters and reducing sequential forgetting to about 5%.}
+}
+
 @inproceedings{koleilat2026evisteer,
   title={Evi-Steer: Learning to Steer Biomedical Vision-Language Models through Efficient and Generalizable Evidential Tuning},
-  author={Koleilat, Taha and Rivaz, Hassan and Xiao, Yiming},
+  author={{\textbf{Koleilat, Taha}} and Rivaz, Hassan and Xiao, Yiming},
   booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
   year={2026},
   selected={true},
@@ -28,11 +47,13 @@
   website   = {https://tahakoleilat.github.io/Evi-Steer/},
   preview   = {evisteer_overview.png},
   abstract = {Parameter-efficient adaptation of vision--language foundation models is crucial for precise multimodal understanding of biomedical images, yet existing methods remain deterministic and often struggle under domain shift or ambiguous image-text alignment. This limitation is particularly critical in the clinic, where models should remain robust in low-data regimes and domain shifts. We present Evi-Steer, an evidential cross-modal low-dimensional steering framework for BiomedCLIP that enables uncertainty-aware parameter-efficient fine-tuning while updating only 0.11% of total model parameters. Our approach performs lightweight low-dimensional token updates in both vision and text encoders while simultaneously estimating epistemic uncertainty. These uncertainty estimates update gate residuals, allowing the model to adapt conservatively when evidence is weak. Furthermore, we introduce cross-modal confidence fusion based on Dempster-Shafer theory, enabling visual adaptation to be conditioned on textual confidence and suppressing conflicting or uncertain cross-modal updates. We conduct a comprehensive evaluation on 15 biomedical imaging datasets spanning 8 organs and 8 imaging modalities under few-shot learning and domain generalization settings. Evi-Steer consistently outperforms state-of-the-art methods under few-shot learning and domain shift settings, demonstrating a practical and robust pathway for deploying vision-language models in real-world clinical settings.}
-  }
+}
+
+
 
 @inproceedings{koleilat2025biomedcoop,
   title={Biomedcoop: Learning to prompt for biomedical vision-language models},
-  author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
+  author={{\textbf{Koleilat, Taha}} and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
   booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
   pages={14766--14776},
   abbr={CVPR},
@@ -48,7 +69,7 @@
 
 @article{koleilat2025medclip,
   title={Medclip-samv2: Towards universal text-driven medical image segmentation},
-  author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
+  author={{\textbf{Koleilat, Taha}} and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
   journal={Medical Image Analysis},
   pages={103749},
   year={2025},
@@ -73,7 +94,7 @@
 
 @inproceedings{koleilat2024medclip,
   title={Medclip-sam: Bridging text and image towards universal medical image segmentation},
-  author={Koleilat, Taha and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
+  author={{\textbf{Koleilat, Taha}} and Asgariandehkordi, Hojat and Rivaz, Hassan and Xiao, Yiming},
   booktitle={International conference on medical image computing and computer-assisted intervention},
   pages={643--653},
   year={2024},
@@ -119,7 +140,7 @@
 
 @article{koleilat2026clipsvd,
   title={{CLIP}-{SVD}: Efficient and Interpretable Vision{\textendash}Language Adaptation via Singular Values},
-  author={Taha Koleilat and Hassan Rivaz and Yiming Xiao},
+  author={\textbf{Taha Koleilat} and Hassan Rivaz and Yiming Xiao},
   journal={Transactions on Machine Learning Research},
   year={2026},
   issn={2835-8856},
@@ -165,7 +186,7 @@ year = {2026},
 issn = {1568-4946},
 doi = {https://doi.org/10.1016/j.asoc.2025.114045},
 url = {https://www.sciencedirect.com/science/article/pii/S1568494625013584},
-author = {Omid {Nejati Manzari} and Hojat Asgariandehkordi and Taha Koleilat and Yiming Xiao and Hassan Rivaz},
+author = {Omid {Nejati Manzari} and Hojat Asgariandehkordi and \textbf{Taha Koleilat} and Yiming Xiao and Hassan Rivaz},
 pdf       = {https://arxiv.org/abs/2502.13693},
 code      = {https://github.com/Omid-Nejati/MedViTV2},
 bibtex_show = {true},
@@ -173,7 +194,7 @@ preview   = {medvitv2.png}
 }
 
 @ARTICLE{11146904,
-  author={Rasaee, Hamza and Koleilat, Taha and Rivaz, Hassan},
+  author={Rasaee, Hamza and \textbf{Koleilat, Taha} and Rivaz, Hassan},
   journal={IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control}, 
   title={Grounding DINO-US-SAM: Text-Prompted Multiorgan Segmentation in Ultrasound With LoRA-Tuned Vision–Language Models}, 
   year={2025},
