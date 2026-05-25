@@ -17,17 +17,17 @@ selected_papers: true
 social: true
 ---
 
-Hi, I am **Taha Koleilat**, a PhD candidate in **Electrical & Computer Engineering** at **Concordia University**, Montreal. I am a Graduate Research Assistant at the **IMPACT** and **Health-X Labs**, supervised by <a href="https://www.concordia.ca/ginacody/electrical-computer-engineering/faculty/hassan-rivaz.html">Prof. Hassan Rivaz</a> and <a href="https://www.concordia.ca/ginacody/computer-science-software-engineering/faculty/yiming-xiao.html">Prof. Yiming Xiao</a>.
+Hi, I am **Taha Koleilat**, a PhD candidate in **Electrical & Computer Engineering** at **Concordia University**, Montreal. I am a Graduate Research Assistant at the **IMPACT** and **Health-X Labs**, supervised by <a href="https://www.concordia.ca/ginacody/electrical-computer-engineering/faculty/hassan-rivaz.html">Prof. Hassan Rivaz</a> and <a href="https://www.concordia.ca/ginacody/computer-science-software-engineering/faculty/yiming-xiao.html">Prof. Yiming Xiao</a>. In **Summer 2026**, I will be joining **Amazon** as an **Applied Scientist Intern**.
 
-Previously, I attained my **BEng in Computer & Communications Engineering** at the **American University of Beirut**, graduating with **High Distinction (4.0/4.0)** and a minor in **Economics**.
+Previously, I received my **BEng in Computer & Communications Engineering** from the **American University of Beirut**, graduating with **High Distinction (4.0/4.0)** and a minor in **Economics**.
 
-My research lies at the intersection of **medical image analysis**, **vision–language models**, and **foundation models**. I focus on developing **data-efficient, generalizable, and interpretable multimodal learning frameworks** that bridge **medical images and clinical text**, enabling robust performance under **low-data and cross-domain settings**.
+My research lies at the intersection of **medical image analysis**, **vision–language models**, and **foundation models**. I develop **data-efficient, generalizable, and interpretable multimodal learning frameworks** that bridge **medical images and clinical text**, with a focus on robust performance under **low-data**, **cross-domain**, and **clinically realistic** settings.
 
-My work has been published at leading venues including **CVPR**, **MICCAI**, and **Medical Image Analysis**, and has been supported by major competitive awards such as the **FRQNT Doctoral Scholarship**.
+My work has been published at leading venues including **CVPR**, **MICCAI**, and **Medical Image Analysis**, and has been supported by competitive awards such as the **FRQNT Doctoral Scholarship**.
 
 <b>Currently, I am</b> working on **text-driven medical image segmentation**, **vision–language model adaptation**, and **uncertainty-aware multimodal learning** for efficient and reliable clinical deployment.
 
-I am serving as a reviewer for leading venues including **IEEE TPAMI**, **MICCAI**, **Medical Image Analysis (MedIA)**, and **IEEE TMI**.
+I also serve as a reviewer for leading venues including **IEEE TPAMI**, **MICCAI**, **Medical Image Analysis (MedIA)**, and **IEEE TMI**.
 
 <a href="mailto:tahakoleilat@gmail.com">Email</a> /
 <a href="https://scholar.google.ca/citations?user=chB2OjUAAAAJ&hl=en&authuser=1">Google Scholar</a> /
