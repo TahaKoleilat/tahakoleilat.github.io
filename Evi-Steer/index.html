@@ -309,11 +309,17 @@
 
     <div class="content has-text-justified">
       <p>
-        Ablations show that visual adaptation, textual adaptation, evidential updates, and cross-modal belief fusion all contribute to the final domain-generalization performance, with visual adaptation producing the largest OOD gain.
+        We conduct ablation studies to better understand the contribution of the
+        proposed components. Results show that visual adaptation, textual adaptation,
+        evidential uncertainty modeling, and cross-modal belief fusion all contribute
+        to the final domain-generalization performance, with visual adaptation having
+        the largest impact on out-of-distribution robustness.
       </p>
     </div>
 
+    <!-- ===== Component Ablation ===== -->
     <h3 class="title is-4">Effectiveness of Key Components</h3>
+
     <div class="table-container">
       <table class="table is-bordered is-striped is-hoverable is-fullwidth tight-table">
         <thead>
@@ -331,19 +337,67 @@
             <td><b>77.97</b></td>
             <td><b>78.87</b></td>
           </tr>
-          <tr><td>w/o Visual Adaptation</td><td>76.23 (−3.56)</td><td>72.25 (−5.72)</td><td>74.19 (−4.68)</td></tr>
-          <tr><td>w/o Textual Adaptation</td><td>78.40 (−1.39)</td><td>76.97 (−1.00)</td><td>77.68 (−1.19)</td></tr>
-          <tr><td>w/o Evidential Update</td><td>79.25 (−0.54)</td><td>76.34 (−1.63)</td><td>77.77 (−1.10)</td></tr>
-          <tr><td>w/o Cross-modal Belief</td><td>79.52 (−0.27)</td><td>76.90 (−1.07)</td><td>78.19 (−0.68)</td></tr>
+          <tr>
+            <td>w/o Visual Adaptation</td>
+            <td>76.23 (−3.56)</td>
+            <td>72.25 (−5.72)</td>
+            <td>74.19 (−4.68)</td>
+          </tr>
+          <tr>
+            <td>w/o Textual Adaptation</td>
+            <td>78.40 (−1.39)</td>
+            <td>76.97 (−1.00)</td>
+            <td>77.68 (−1.19)</td>
+          </tr>
+          <tr>
+            <td>w/o Evidential Update</td>
+            <td>79.25 (−0.54)</td>
+            <td>76.34 (−1.63)</td>
+            <td>77.77 (−1.10)</td>
+          </tr>
+          <tr>
+            <td>w/o Cross-modal Belief</td>
+            <td>79.52 (−0.27)</td>
+            <td>76.90 (−1.07)</td>
+            <td>78.19 (−0.68)</td>
+          </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="content has-text-justified mt-5">
+    <!-- ===== Layer & Rank Ablation ===== -->
+    <h3 class="title is-4 mt-6">Layer and Rank Ablation Studies</h3>
+
+    <div class="content has-text-justified">
       <p>
-        The layer-depth and adapter-dimension analyses further suggest that distributing lightweight adapters across more layers improves generalization, while a compact latent dimension of <b>r = 4</b> provides the best harmonic-mean accuracy by balancing adaptation capacity and overfitting.
+        We further analyze the effect of the intervention depth <b>d</b> and the
+        latent adapter dimension <b>r</b>. Increasing the number of adapted layers
+        consistently improves domain generalization performance, indicating that
+        distributing lightweight steering modules throughout the network is more
+        effective than shallow adaptation. We also observe that performance improves
+        as the adapter dimension increases from small values and reaches its optimum
+        at <b>r = 4</b>. Larger dimensions provide no additional benefit and slightly
+        reduce performance, suggesting that compact low-dimensional updates achieve
+        the best balance between adaptation capacity and overfitting.
       </p>
     </div>
+
+    <div class="paper-figure mt-5">
+      <figure class="image">
+        <img src="./static/images/layers_dimension_plot.png"
+             onerror="this.onerror=null;this.src='./assets/layer_rank_ablation.png';"
+             alt="Layer and rank ablation study" />
+      </figure>
+      <p class="has-text-centered is-size-7 mt-2">
+        <b>Layer and rank ablation studies.</b>
+        Left: effect of the number of adapted encoder layers (<i>d</i>) on harmonic-mean
+        domain-generalization accuracy. Right: effect of the latent adapter dimension
+        (<i>r</i>). Increasing intervention depth consistently improves performance,
+        while a compact adapter dimension of <i>r = 4</i> provides the best trade-off
+        between adaptation capacity and generalization.
+      </p>
+    </div>
+
   </div>
 </section>
 
