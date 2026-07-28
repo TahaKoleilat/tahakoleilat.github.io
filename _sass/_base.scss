@@ -553,9 +553,11 @@ footer.sticky-bottom {
     max-height: 20rem;
     overflow-y: auto;
     scroll-behavior: smooth;
-    // thin, theme-aware scrollbar
+    // thin scrollbar: track space is always reserved (no layout shift),
+    // but the thumb is hidden until the mouse is over the news section.
     scrollbar-width: thin;
-    scrollbar-color: var(--global-divider-color) transparent;
+    scrollbar-color: transparent transparent;
+    transition: scrollbar-color 0.2s ease;
 
     &::-webkit-scrollbar {
       width: 6px;
@@ -564,8 +566,17 @@ footer.sticky-bottom {
       background: transparent;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: var(--global-divider-color);
+      background-color: transparent;
       border-radius: 3px;
+      transition: background-color 0.2s ease;
+    }
+
+    &:hover {
+      scrollbar-color: var(--global-divider-color) transparent;
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--global-divider-color);
+      }
     }
 
     table {
