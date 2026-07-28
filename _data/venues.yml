@@ -33,3 +33,19 @@ IEEE TMI:
 Preprint:
   url: https://arxiv.org/
   color: "#6b7280"
+
+CVPR:
+  url: https://cvpr.thecvf.com/
+  color: "#b91c1c"
+
+TMLR:
+  url: https://jmlr.org/tmlr/
+  color: "#7e22ce"
+
+ASOC:
+  url: https://www.sciencedirect.com/journal/applied-soft-computing
+  color: "#ca8a04"
+
+ICCV CVAMD:
+  url: https://iccv.thecvf.com/
+  color: "#0d9488"

@@ -25,6 +25,15 @@
             <abbr class="badge">{{entry.abbr}}</abbr>
           {%- endif -%}
         {%- endif -%}
+        {%- if entry.abbr and entry.year -%}
+          {%- assign venue = site.data.venues[entry.abbr] -%}
+          {%- if venue and venue.color != blank -%}
+            {%- assign tag_bg = venue.color -%}
+          {%- else -%}
+            {%- assign tag_bg = "#6b7280" -%}
+          {%- endif -%}
+          <span class="publication-tag" style="background-color: {{ tag_bg }}">{{ entry.abbr }} {{ entry.year }}</span>
+        {%- endif -%}
         </div>
 
         <!-- Entry bib key -->
