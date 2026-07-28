@@ -555,19 +555,24 @@ footer.sticky-bottom {
     overflow-y: scroll;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
+    // Firefox
     scrollbar-width: thin;
-    scrollbar-color: var(--global-divider-color) transparent;
+    scrollbar-color: var(--global-divider-color) rgba(128, 128, 128, 0.15);
 
+    // WebKit / Blink (Chrome, Safari, Edge) — force an always-visible bar
     &::-webkit-scrollbar {
-      width: 8px;
       -webkit-appearance: none;
+      width: 10px;
     }
     &::-webkit-scrollbar-track {
-      background: transparent;
+      background-color: rgba(128, 128, 128, 0.15);
+      border-radius: 5px;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: var(--global-divider-color);
-      border-radius: 4px;
+      background-color: var(--global-theme-color);
+      border-radius: 5px;
+      border: 2px solid transparent;
+      background-clip: content-box;
     }
 
     table {
