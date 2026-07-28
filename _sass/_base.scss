@@ -551,8 +551,8 @@ footer.sticky-bottom {
 .news {
   .table-responsive.news-scroll-limited {
     max-height: 20rem;
-    // Scrollbar is hidden until the mouse is over the news section.
-    overflow-y: hidden;
+    // Scrollbar is always visible.
+    overflow-y: scroll;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
     scrollbar-width: thin;
@@ -560,6 +560,7 @@ footer.sticky-bottom {
 
     &::-webkit-scrollbar {
       width: 8px;
+      -webkit-appearance: none;
     }
     &::-webkit-scrollbar-track {
       background: transparent;
@@ -567,11 +568,6 @@ footer.sticky-bottom {
     &::-webkit-scrollbar-thumb {
       background-color: var(--global-divider-color);
       border-radius: 4px;
-    }
-
-    // Reveal the scrollbar (and enable scrolling) on hover.
-    &:hover {
-      overflow-y: auto;
     }
 
     table {
