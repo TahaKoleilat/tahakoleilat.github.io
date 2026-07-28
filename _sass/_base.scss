@@ -554,10 +554,11 @@ footer.sticky-bottom {
     // Scrollbar is always visible.
     overflow-y: scroll;
     scroll-behavior: smooth;
-    scrollbar-gutter: stable;
-    // Firefox
-    scrollbar-width: thin;
-    scrollbar-color: var(--global-divider-color) rgba(128, 128, 128, 0.15);
+    // NOTE: intentionally NOT setting `scrollbar-width`/`scrollbar-color`.
+    // In Chrome 121+ those standard properties disable the `::-webkit-scrollbar`
+    // pseudo-elements below, which makes macOS fall back to an auto-hiding
+    // overlay bar. Using only the WebKit pseudo-elements forces an
+    // always-visible custom scrollbar on Chrome/Safari/Edge.
 
     // WebKit / Blink (Chrome, Safari, Edge) — force an always-visible bar
     &::-webkit-scrollbar {
