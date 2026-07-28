@@ -551,32 +551,27 @@ footer.sticky-bottom {
 .news {
   .table-responsive.news-scroll-limited {
     max-height: 20rem;
-    overflow-y: auto;
+    // Scrollbar is hidden until the mouse is over the news section.
+    overflow-y: hidden;
     scroll-behavior: smooth;
-    // thin scrollbar: track space is always reserved (no layout shift),
-    // but the thumb is hidden until the mouse is over the news section.
+    scrollbar-gutter: stable;
     scrollbar-width: thin;
-    scrollbar-color: transparent transparent;
-    transition: scrollbar-color 0.2s ease;
+    scrollbar-color: var(--global-divider-color) transparent;
 
     &::-webkit-scrollbar {
-      width: 6px;
+      width: 8px;
     }
     &::-webkit-scrollbar-track {
       background: transparent;
     }
     &::-webkit-scrollbar-thumb {
-      background-color: transparent;
-      border-radius: 3px;
-      transition: background-color 0.2s ease;
+      background-color: var(--global-divider-color);
+      border-radius: 4px;
     }
 
+    // Reveal the scrollbar (and enable scrolling) on hover.
     &:hover {
-      scrollbar-color: var(--global-divider-color) transparent;
-
-      &::-webkit-scrollbar-thumb {
-        background-color: var(--global-divider-color);
-      }
+      overflow-y: auto;
     }
 
     table {
