@@ -5,5 +5,5 @@ inline: true
 related_posts: false
 ---
 
-Started my internship as an **Applied Scientist at Amazon**, working with the **Ring team** in **Toronto, Canada**!
+Started my internship as an **Applied Scientist at Amazon**, working with the **Ring team**!
 
