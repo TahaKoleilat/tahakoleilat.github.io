@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: PhD Candidate, <a href="https://www.concordia.ca/">Concordia University</a>, Canada · BEng from <a href="https://www.aub.edu.lb/">American University of Beirut</a>
+subtitle: PhD Student, <a href="https://mila.quebec/">Mila – Quebec AI Institute</a> and <a href="https://www.concordia.ca/">Concordia University</a>, Canada · BEng from <a href="https://www.aub.edu.lb/">American University of Beirut</a>
 
 profile:
   align: right
@@ -17,7 +17,7 @@ selected_papers: true
 social: true
 ---
 
-Hi, I am **Taha Koleilat**, a PhD candidate in **Electrical & Computer Engineering** at **Concordia University**, Montreal. I am a Graduate Research Assistant at the **IMPACT** and **Health-X Labs**, supervised by <a href="https://www.concordia.ca/ginacody/electrical-computer-engineering/faculty/hassan-rivaz.html">Prof. Hassan Rivaz</a> and <a href="https://www.concordia.ca/ginacody/computer-science-software-engineering/faculty/yiming-xiao.html">Prof. Yiming Xiao</a>. During **Summer 2026**, I worked as an **Applied Scientist Intern at Amazon** with the **Ring team** on computer vision research.
+Hi, I am **Taha Koleilat**, a PhD student in **Electrical & Computer Engineering** at **Concordia University** and **Mila – Quebec AI Institute**, Montreal. I am a Graduate Research Assistant at the **IMPACT** and **Health-X Labs**, supervised by <a href="https://www.concordia.ca/ginacody/electrical-computer-engineering/faculty/hassan-rivaz.html">Prof. Hassan Rivaz</a> and <a href="https://www.concordia.ca/ginacody/computer-science-software-engineering/faculty/yiming-xiao.html">Prof. Yiming Xiao</a>. Previously, I was an **Applied Scientist Intern at Amazon**, where I worked with the **Ring team** on computer vision research during **Summer 2026**.
 
 Previously, I received my **BEng in Computer & Communications Engineering** from the **American University of Beirut**, graduating with **High Distinction (4.0/4.0)** and a minor in **Economics**.
 
