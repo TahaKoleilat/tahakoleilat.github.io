@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I received the **IEEE TMI Gold-Level Distinguished Reviewer Certificate** in recognition of my reviewing contributions.
+Received the **IEEE TMI Gold-Level Distinguished Reviewer Certificate** for the second consecutive year.

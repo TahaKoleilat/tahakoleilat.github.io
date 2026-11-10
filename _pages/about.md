@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: PhD Student, <a href="https://mila.quebec/">Mila – Quebec AI Institute</a> and <a href="https://www.concordia.ca/">Concordia University</a>, Canada · BEng from <a href="https://www.aub.edu.lb/">American University of Beirut</a>
+subtitle: PhD Student, <a href="https://mila.quebec/">Mila – Quebec AI Institute</a> & <a href="https://www.concordia.ca/">Concordia University</a>
 
 profile:
   align: right
@@ -17,20 +17,14 @@ selected_papers: true
 social: true
 ---
 
-Hi, I am **Taha Koleilat**, a PhD student in **Electrical & Computer Engineering** at **Concordia University** and **Mila – Quebec AI Institute**, Montreal. I am a Graduate Research Assistant at the **IMPACT** and **Health-X Labs**, supervised by <a href="https://www.concordia.ca/ginacody/electrical-computer-engineering/faculty/hassan-rivaz.html">Prof. Hassan Rivaz</a> and <a href="https://www.concordia.ca/ginacody/computer-science-software-engineering/faculty/yiming-xiao.html">Prof. Yiming Xiao</a>. Previously, I was an **Applied Scientist Intern at Amazon**, where I worked with the **Ring team** on computer vision research during **Summer 2026**.
+Hi, I am **Taha Koleilat**, a PhD student in Electrical & Computer Engineering at Concordia University and **Mila – Quebec AI Institute**, supervised by <a href="https://www.concordia.ca/ginacody/electrical-computer-engineering/faculty/hassan-rivaz.html">Prof. Hassan Rivaz</a> and <a href="https://www.concordia.ca/ginacody/computer-science-software-engineering/faculty/yiming-xiao.html">Prof. Yiming Xiao</a> at the IMPACT and Health-X Labs. In Summer 2026, I was an **Applied Scientist Intern at Amazon**, working on computer vision research with the Ring team.
 
-Previously, I received my **BEng in Computer & Communications Engineering** from the **American University of Beirut**, graduating with **High Distinction (4.0/4.0)** and a minor in **Economics**.
+My research lies at the intersection of **medical image analysis**, **vision–language models**, and **foundation models**. I develop data-efficient, generalizable, and interpretable multimodal learning methods that bridge medical images and clinical text, with a focus on robustness in low-data, cross-domain, and clinically realistic settings. Currently, I am working on text-driven medical image segmentation, vision–language model adaptation, and uncertainty-aware multimodal learning.
 
-My research lies at the intersection of **medical image analysis**, **vision–language models**, and **foundation models**. I develop **data-efficient, generalizable, and interpretable multimodal learning frameworks** that bridge **medical images and clinical text**, with a focus on robust performance under **low-data**, **cross-domain**, and **clinically realistic** settings.
-
-My work has been published at leading venues including **CVPR**, **MICCAI**, and **Medical Image Analysis**, and has been supported by competitive awards such as the **FRQNT Doctoral Scholarship**.
-
-<b>Currently, I am</b> working on **text-driven medical image segmentation**, **vision–language model adaptation**, and **uncertainty-aware multimodal learning** for efficient and reliable clinical deployment.
-
-I also serve as a reviewer for leading venues including **IEEE TPAMI**, **MICCAI**, **Medical Image Analysis (MedIA)**, and **IEEE TMI**.
+My work has been published at venues including **CVPR**, **MICCAI**, **TMLR**, and **Medical Image Analysis**, and is supported by the FRQNT Doctoral Scholarship. I serve as a reviewer for IEEE TPAMI, IEEE TMI, MICCAI, and MedIA. Before my PhD, I received my BEng in Computer & Communications Engineering from the American University of Beirut with High Distinction (4.0/4.0) and a minor in Economics.
 
 <a href="mailto:tahakoleilat@gmail.com">Email</a> /
-<a href="https://scholar.google.ca/citations?user=chB2OjUAAAAJ&hl=en&authuser=1">Google Scholar</a> /
+<a href="https://scholar.google.ca/citations?user=chB2OjUAAAAJ&hl=en">Google Scholar</a> /
 <a href="https://github.com/TahaKoleilat">GitHub</a> /
 <a href="https://www.linkedin.com/in/tahakoleilat/">LinkedIn</a> /
 <a href="/assets/pdf/Resume.pdf">CV</a>
